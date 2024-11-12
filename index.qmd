@@ -1,100 +1,40 @@
 ---
-title: Welcome to coreR!
-format:
-  html:
-    toc: false
+title: "The `coreR` package"
 ---
 
-<!-- # Preface {.unnumbered} -->
+## Course development with `coreR` {.unnumbered}
 
-::: column-margin
+The `coreR` package (and its sister package, `coreRlessons`) were developed to make it easy to set up a course for the NCEAS Learning Hub, particularly the **coreR** course offerings.
 
-<!-- ![](cover.png){width="80%" fig-align="center"} -->
+## Why `coreR`?
 
-<!-- ![](images/delta/delta-logo.png){width="80%" fig-align="center"} -->
+### Where we're at
 
-:::
+For years NCEAS has been offering courses through the Learning Hub and the Arctic Data Center, among other efforts.  The course offerings include lessons on collaboration with Git and GitHub, reproducibility with R and RStudio, and fundamental techniques of working with all kinds of data.  As of October 2024, these courses have been built in the [nceas-training](https://github.com/NCEAS/nceas-training) repository of the [NCEAS GitHub organization](https://github.com/NCEAS), with each course built on a separate branch.  These courses are rendered by GitHub actions set up in the [repro-research-course](https://github.com/NCEAS/repro-research-course) repository, where the courses are linked to an NCEAS URL, and archived in the repo.
 
-## About the course {.unnumbered}
+This system has worked for years, and the lesson offerings have grown organically over time to 116 different `.Rmd`s and `.qmd`s.  But setting up a new course is a little tricky - after establishing a desired curriculum, an instructor needs to manually identify relevant lessons from a long list of files with inconsistent file naming, and then needs to manually set up files to link to these lessons, all within a new branch to avoid affecting other lessons (and to work with the Github actions to publish the course).  The lesson catalog contains duplicates, updated versions, deprecated lessons, etc.  The instructor then frequently has to make edits to the lessons, on that separate branch.  As of this writing, there are 43 separate branches, each likely holding improvements and valuable edits that cannot easily be resolved into the "best" version of each lesson.  This branch method works, but is fragile, difficult to navigate, and uses branches in a different way than typically designed.
 
-This is a test course to show off the functionality of the coreR and coreRlessons packages
-<!-- As part of a collaboration between NCEAS and the Delta Science Program, this course has been adapted from [NCEAS coreR course](https://www.nceas.ucsb.edu/learning-hub/core-r), an in-person immersion in R programming for environmental data science. Researchers will gain experience with essential data science tools and best practices to increase their capacity as collaborators, reproducible coders, and open scientists. -->
+### Where we're going
 
+By setting up a new NCEAS Learning Hub organization, and designing the coreR and coreRlessons packages, we can accomplish a few things:
 
+1. Make it far easier to set up a typical Learning Hub training by automating many of the setup steps.
+2. Curate the course offerings and try to outline some standards for adding additional course offerings, for consistency.
+3. Use distinct repositories to host each course, rather than branches all held within a single repository.
+4. Update course lessons so that old course offerings can be brought into line with current course offerings (or lessons can be reverted to old versions).
+5. Use GitHub Pages to publish courses to the web.
+6. Put into practice many of the workflows we preach :)
 
-## NCEAS Expertise
+## What does `coreR` do?
 
-The [National Center for Ecological Analysis and Synthesis (NCEAS)](https://www.nceas.ucsb.edu/), a research affiliate of UCSB, is a leading expert on interdisciplinary data science and works collaboratively to answer the world's largest and most complex questions. The NCEAS approach leverages existing data and employs a team science philosophy to squeeze out all potential insights and solutions efficiently - this is called [synthesis science](https://www.nceas.ucsb.edu/our-approach).
+The `coreR` package has a few key functions:
 
-NCEAS has over 25 years of success with this model among working groups and environmental professionals. Together with the Delta Science Program and the Delta Stewardship Council we are excited to pass along skills, workflows, mindsets learn throughout the years.
+* `init_course()` initializes a course by setting up a new repository and adding some metadata about the course based on user input.
+* `setup_lessons()` copies selected lessons from the `coreRlessons` package into the course repository and sets up the structure of the course as a Quarto website.
+* `update_lessons()` will update lessons (or revert to older ones) based on user selection of a version of the `coreRlessons` package.
 
+## What does `coreRlessons` do?
 
-<!-- *June 10 - 13, 2024* -->
+The `coreRlessons` package doesn't have any functions, but instead houses lessons as Quarto documents, along with templates and support files to construct a course.  Why is this separate from `coreR`?  First, it seemed like a good idea to allow the course lesson _content_ to be version-controlled separately from the package containing the _functions._  Second, this allows for other instructors or organizations to create their own lesson content or structure that can play nicely with the coreR functionality - for example, if the curriculum for the Delta Stewardship Council diverged from the coreR curriculum, we could create a `deltaLessons` package to contain different content, and even a different style or format.  Third, it allows an instructor to choose different versions of the content and perhaps update an old course, if the materials for the old course are significantly out of date.
 
-:::{.callout-tip title="Learning Objectives"}
--   Effectively manage data using `tidy` data practices
--   Implement reproducible scientific workflows throughout all aspects of a project
--   Establish best practices and utilize tools like Git & GitHub to optimize your collaboration
--   Better communicate scientific analyses and results using Markdown, GitHub webpages, and R packages like `ggplot2` and `Shiny`
-- Increase your familiarity and confidence with data science tools
-:::
-
-### Week's Schedule
-
-:::{.column-body-outset}
-![](images/schedule.png)
-:::
-
-### testing callouts:
-
-NOTE it looks like including `title="title of callout"` in the callout doesn't work... and either does the header method that works for standard callouts... oh well, still pretty cool.  Look at NCEAS Learning Hub style sheet for color ideas.
-
-::: {.callout-exercise}
-Here's the exercise
-
-::: {.callout-hint}
-here's the hint!
-:::
-
-::: {.callout-answer}
-here's the nested answer
-:::
-
-:::
-
-::: {.callout-hint}
-here's the hint, not nested or collapsed
-:::
-
-::: {.callout-answer}
-here's the non-nested answer
-:::
-
-::: {.callout-example collapse=true}
-here's an example
-
-and more text
-:::
-
-
-## Code of Conduct
-
-By participating in this activity you agree to abide by the [NCEAS Code of Conduct](https://www.nceas.ucsb.edu/sites/default/files/2021-11/NCEAS_Code-of-Conduct_Nov2021_0.pdf).
-
-## About this book
-
-These written materials are the result of a continuous and collaborative effort at NCEAS to help researchers make their work more transparent and reproducible. This work began in the early 2000's, and reflects the expertise and diligence of many, many individuals. The primary authors are listed in the citation below, with additional contributors recognized for their role in developing previous iterations of these or similar materials.
-
-This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
-
-**Citation:** Camila Vargas Poulsen & Angel Chen (2024), NCEAS coreR for Delta Science Program, June 2024, NCEAS Learning Hub. URL <https://learning.nceas.ucsb.edu/2024-06-delta>.
-
-**Additional contributors:** Ben Bolker, Amber E. Budden, Julien Brun, Samantha Csik, Halina Do-Linh, Natasha Haycock-Chavez, S. Jeanette Clark, Julie Lowndes, Stephanie Hampton, Matt Jone, Samanta Katz, Erin McLean, Bryce Mecum, Deanna Pennington, Karthik Ram, Jim Regetz, Tracy Teal, Daphne Virlar-Knight, Leah Wasser.
-
-
-
-This is a Quarto book. To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-
-
-
+Clearly we need a coreR hex sticker!

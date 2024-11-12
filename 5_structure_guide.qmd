@@ -1,0 +1,7 @@
+---
+title: Course rendering
+---
+
+Tips, suggestions, standards, naming conventions, structure for new lessons
+
+See <https://cambiotraining.github.io/quarto-course-template/materials/01-render_guidelines.html> for an idea of how to organize it

@@ -1,0 +1,5 @@
+---
+title: Initialize a course
+---
+
+Vignette about using `init_course()` including arguments

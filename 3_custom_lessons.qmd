@@ -1,0 +1,5 @@
+---
+title: Customize lessons
+---
+
+Vignette about customizing a lesson (structure basics, slides, images, data)

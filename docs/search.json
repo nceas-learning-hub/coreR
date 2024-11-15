@@ -59,7 +59,40 @@
     "href": "5_structure_guide.html",
     "title": "Course rendering",
     "section": "",
-    "text": "Tips, suggestions, standards, naming conventions, structure for new lessons\nSee https://cambiotraining.github.io/quarto-course-template/materials/01-render_guidelines.html for an idea of how to organize it",
+    "text": "Tips, suggestions, standards, naming conventions, structure for new lessons\nSee https://cambiotraining.github.io/quarto-course-template/materials/01-render_guidelines.html for an idea of how to organize it\nThe coreR course structure is a website with a left sidebar to navigate among lessons and a right sidebar to show the contents of the current lesson.",
+    "crumbs": [
+      "Contributing a lesson",
+      "Course rendering"
+    ]
+  },
+  {
+    "objectID": "5_structure_guide.html#quarto.yml",
+    "href": "5_structure_guide.html#quarto.yml",
+    "title": "Course rendering",
+    "section": "1 _quarto.yml",
+    "text": "1 _quarto.yml\nIn the course repository, the _quarto.yml contains all the information on how to render the website.",
+    "crumbs": [
+      "Contributing a lesson",
+      "Course rendering"
+    ]
+  },
+  {
+    "objectID": "5_structure_guide.html#lessons",
+    "href": "5_structure_guide.html#lessons",
+    "title": "Course rendering",
+    "section": "2 Lessons",
+    "text": "2 Lessons\nThe lesson .qmd files are copied out of the lessons package ({coreRlessons} by default) and into the course repository. To maintain some order, a prefix is appended to the lesson names, e.g., s01_r_programming_introduction.qmd.\n\n\n\n\n\n\n.Rmd vs .qmd\n\n\n\nFor consistency, lesson files must be Quarto documents with a .qmd extension and a yaml header containing only the title. Older lessons in .Rmd format should be updated.\n\n\n\n2.1 Lesson supporting files\nSome lessons link to external images, data, or embedded slides. These files are stored in directories named images, data, and slides respectively. For a given lesson, correspondingly named subdirectories will appear in each of these image/data/slides directories, like this (for a lesson s01_r_programming_introduction.qmd):\n&lt;project root&gt;\n  |-- s01_r_programming_introduction.qmd  ### the lesson document\n  |-- s02_github_introduction.qmd         ### etc\n  |\n  |-- data\n  |  |-- r_programming_introduction\n  |     |-- dataset1.csv ### filename as called in lesson qmd\n  |  \n  |-- images\n  |  |-- r_programming_introduction\n  |  |  |-- image1.png ### filename as called in lesson qmd\n  |  |  |-- image2.png ### etc\n  |  |\n  |  |-- github_introduction\n  |     |-- image1.png ### filename as called in lesson qmd\n  |     |-- image2.png ### etc\n  |\n  |-- slides\n  |  |-- r_programming_introduction \n  |  |  |-- slides.qmd        ### filename as embedded in lesson qmd\n  |  |  |-- lesson_style.scss ### filename as noted in the slides qmd\n  |  |\n  |  |-- github_introduction\n  |     |-- github_slides.qmd ### filename as called in lesson qmd\n  |     |-- style.css         ### etc\n ...   ...\nIf a lesson does not have supporting files, e.g., no images, then there may not be a corresponding folder (e.g., the github_introduction.qmd lesson above does not have a data folder!)\n\n\n\n\n\n\nFile structure in created course vs. in coreRlessons package\n\n\n\nThe file structure inside the coreRlessons package is similar except:\n\nthe lesson .qmds and supporting files/folders all live in the inst folder inside the package repository\nthe supporting files folders are all prefaced with lesson_ (e.g., lesson_data) - this is because R packages don’t like a folder called data in the inst folder, since it may interact with the data folder in the root.",
+    "crumbs": [
+      "Contributing a lesson",
+      "Course rendering"
+    ]
+  },
+  {
+    "objectID": "5_structure_guide.html#extensions-and-formatting",
+    "href": "5_structure_guide.html#extensions-and-formatting",
+    "title": "Course rendering",
+    "section": "3 Extensions and formatting",
+    "text": "3 Extensions and formatting\n\nscss etc in the _extensions folder? or in root?\nif extension, how to update styling (separate from content)",
     "crumbs": [
       "Contributing a lesson",
       "Course rendering"
@@ -81,7 +114,7 @@
     "href": "1_init_course.html",
     "title": "Initialize a course",
     "section": "",
-    "text": "Vignette about using init_course() including arguments",
+    "text": "Initialize a coreR course\n\nDescription\n\nThis will set up the basic project structure for a new course: a project repository, plus a file containing metadata about the course. The metadata file will be used to help populate details in later functions.\n\nUsage\ninit_course(\n  course_proj,\n  course_org = \"nceas-learning-hub\",\n  course_title = NULL,\n  course_description = NULL,\n  start_date = NULL,\n  end_date = NULL,\n  loc = \".\"\n)\nArguments\ncourse_proj \nThe name of the project directory (and Github repo) for the course. Recommended format: YYYY-MM-coreR.\n\ncourse_org  \nThe name of the Github organization to which the course will belong.\n\ncourse_title    \nA brief but descriptive title for the course. If NULL (default), the title will be set the same as the project name.\n\ncourse_description  \nA sentence or two describing the course. If NULL (default), will be left empty.\n\nstart_date  \nThe starting date (as character, so any preferred format). If NULL, will be left empty.\n\nend_date    \nThe ending date (use same format as start_date). If NULL, and start_date is NULL, will be left empty.\n\nloc \nThe file location where the course repository will be created. Defaults to the current working directory.\n\nValue\nstuff\n\nExamples\nRun examples\n\n## Not run: \ninit_course(course_proj = \"2024-10-coreR\",\n            course_title = \"CoreR October 2024\",\n            course_description = \"CoreR course offered at NCEAS in Oct 2024\",\n            start_date = \"Oct. 6, 2024\",\n            end_date = \"Oct. 10, 2024\")\n\n## End(Not run)",
     "crumbs": [
       "Building a course",
       "Initialize a course"
@@ -92,7 +125,7 @@
     "href": "2_setup_lessons.html",
     "title": "Set up lessons",
     "section": "",
-    "text": "Vignette about using setup_lessons()",
+    "text": "Set up a schedule of course lessons\nDescription\nCreate the structure necessary to implement an ordered set of lessons in the Quarto book format. The user provides a character vector of lesson names (filenames, bare or with .qmd extension); these and associated materials (images, data) are copied from coreRlessons package into the course project (created with init_course()). Sets up the index.qmd, _quarto.yml, and some additional files.\n\nUsage\nsetup_lessons(lessons, modules = NULL, overwrite = FALSE)\nArguments\nlessons \nInformation on the lessons to be included in the course, as a character vector or data.frame. A character vector containing the names (bare or .qmd extension) of the lessons, in order; optionally, a named character vector where the names are course modules (e.g., \"Day 1\", \"Day 2\"). Alternately, a data.frame with columns \"module\" and \"lesson\", similar to the named character vector.\n\nmodules \nAn additional way to provide module information for the lessons: a vector of module names that matches the length of the lessons vector. Caution: if modules is not NULL, and module names are provided directly in lessons, this argument will take precedence.\n\noverwrite   \nIf there is already an existing lessons structure, and overwrite = FALSE, will return an error. If the user wishes to create a new lesson structure, then overwrite = TRUE will remove the existing structure in its entirety and create a new structure based on the lesson names.\n\nExamples\nRun examples\n\n## Not run: \nsetup_lessons(lessons = c(\"activity_reproducibility_lego\",\n                          \"lecture_tidy_data.qmd\",\n                          \"github_collaboration\",\n                          \"r_functions.qmd\"))\n### modules as named vector\nlesson_mods &lt;- available_lessons()$lesson[1:6] |&gt; setNames(c(1, 1, 2, 2, 3, 3))\nsetup_lessons(lessons = lesson_mods)\n\n### modules as argument\nsetup_lessons(lessons = available_lessons()$lesson[1:6],\n              modules = rep(c(\"day 1\", \"day 2\"), each = 3))\n\n### modules and course as dataframe\nexample_course &lt;- coreRlessons::example_course\nhead(example_course, 3)\n#   module                        lesson\n# 1  Day 1    r_programming_introduction\n# 2  Day 1    r_quarto_literate_analysis\n# 3  Day 1 activity_reproducibility_lego\nsetup_lessons(example_course)\n\n## End(Not run)",
     "crumbs": [
       "Building a course",
       "Set up lessons"
@@ -103,7 +136,7 @@
     "href": "4_update_lessons.html",
     "title": "Update lessons",
     "section": "",
-    "text": "Vignette about using update_lessons()",
+    "text": "Update lessons in a coreR course\nDescription\nUpdate lessons in a coreR course\n\nUsage\nupdate_lessons(lessons = \"all\", pkg = \"coreRlessons\", version = NULL)\nArguments\nlessons \nA vector of specific lessons to be updated, based on file names (bare or with .qmd extension). If lesson names don't match lessons in the source book, an error will be returned. The default all will update all available lessons, i.e., those whose lesson names match those in the source book. Customized lessons, whose names do not match those in the source book, will not be updated, even with version = 'all'.\n\npkg \nName of the package where lessons are curated, default \"coreRlessons\"\n\nversion \nA version of the coreR package from which the updated lessons should be pulled. version can be given as a commit hash, a tag, a version, or a date.\n\nExamples\nRun examples\n\n# update_lessons(lessons = c(\"git-github-intro\", \"r-creating-packages.qmd\"),\n#                version = \"v0.0.1\")",
     "crumbs": [
       "Building a course",
       "Update lessons"

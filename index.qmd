@@ -1,12 +1,16 @@
 ---
-title: "The `coreR` package"
+title: "The `{coreR}` package"
 ---
 
-## Course development with `coreR` {.unnumbered}
+## Course development with `{coreR}` {.unnumbered}
 
-The `coreR` package (and its sister package, `coreRlessons`) were developed to make it easy to set up a course for the NCEAS Learning Hub, particularly the **coreR** course offerings.
+The `{coreR}` package (and its sister package, `{coreRlessons}`) were developed to make it easy to set up a course for the NCEAS Learning Hub, particularly the **`{coreR}`** course offerings.
 
-## Why `coreR`?
+## Quickie overview of main functions
+
+
+
+## Why `{coreR}`?
 
 ### Where we're at
 
@@ -16,7 +20,7 @@ This system has worked for years, and the lesson offerings have grown organicall
 
 ### Where we're going
 
-By setting up a new NCEAS Learning Hub organization, and designing the coreR and coreRlessons packages, we can accomplish a few things:
+By setting up a new NCEAS Learning Hub organization, and designing the `{coreR}` and `{coreRlessons}` packages, we can accomplish a few things:
 
 1. Make it far easier to set up a typical Learning Hub training by automating many of the setup steps.
 2. Curate the course offerings and try to outline some standards for adding additional course offerings, for consistency.
@@ -30,11 +34,11 @@ By setting up a new NCEAS Learning Hub organization, and designing the coreR and
 The `coreR` package has a few key functions:
 
 * `init_course()` initializes a course by setting up a new repository and adding some metadata about the course based on user input.
-* `setup_lessons()` copies selected lessons from the `coreRlessons` package into the course repository and sets up the structure of the course as a Quarto website.
-* `update_lessons()` will update lessons (or revert to older ones) based on user selection of a version of the `coreRlessons` package.
+* `setup_lessons()` copies selected lessons from the `{coreRlessons}` package into the course repository and sets up the structure of the course as a Quarto website.
+* `update_lessons()` will update lessons (or revert to older ones) based on user selection of a version of the `{coreRlessons}` package.
 
-## What does `coreRlessons` do?
+## What does `{coreRlessons}` do?
 
-The `coreRlessons` package doesn't have any functions, but instead houses lessons as Quarto documents, along with templates and support files to construct a course.  Why is this separate from `coreR`?  First, it seemed like a good idea to allow the course lesson _content_ to be version-controlled separately from the package containing the _functions._  Second, this allows for other instructors or organizations to create their own lesson content or structure that can play nicely with the coreR functionality - for example, if the curriculum for the Delta Stewardship Council diverged from the coreR curriculum, we could create a `deltaLessons` package to contain different content, and even a different style or format.  Third, it allows an instructor to choose different versions of the content and perhaps update an old course, if the materials for the old course are significantly out of date.
+The `{coreRlessons}` package doesn't have any functions, but instead houses lessons as Quarto documents, along with templates and support files to construct a course.  Why is this separate from `{coreR}`?  First, it seemed like a good idea to allow the course lesson _content_ to be version-controlled separately from the package containing the _functions._  Second, this allows for other instructors or organizations to create their own lesson content or structure that can play nicely with the `{coreR}` functionality - for example, if the curriculum for the Delta Stewardship Council diverged from the `{coreR}` curriculum, we could create a `{deltaLessons}` package to contain different content, and even a different style or format.  Third, it allows an instructor to choose different versions of the content and perhaps update an old course, if the materials for the old course are significantly out of date.
 
-Clearly we need a coreR hex sticker!
+Clearly we need a `{coreR}` hex sticker!

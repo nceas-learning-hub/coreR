@@ -243,8 +243,19 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#quarto.yml" id="toc-quarto.yml" class="nav-link active" data-scroll-target="#quarto.yml"><span class="header-section-number">1</span> <code>_quarto.yml</code></a></li>
+  <li><a href="#lessons" id="toc-lessons" class="nav-link" data-scroll-target="#lessons"><span class="header-section-number">2</span> Lessons</a>
+  <ul class="collapse">
+  <li><a href="#lesson-supporting-files" id="toc-lesson-supporting-files" class="nav-link" data-scroll-target="#lesson-supporting-files"><span class="header-section-number">2.1</span> Lesson supporting files</a></li>
+  </ul></li>
+  <li><a href="#extensions-and-formatting" id="toc-extensions-and-formatting" class="nav-link" data-scroll-target="#extensions-and-formatting"><span class="header-section-number">3</span> Extensions and formatting</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -255,8 +266,85 @@ ul.task-list li input[type="checkbox"] {
 
 <p>Tips, suggestions, standards, naming conventions, structure for new lessons</p>
 <p>See <a href="https://cambiotraining.github.io/quarto-course-template/materials/01-render_guidelines.html" class="uri">https://cambiotraining.github.io/quarto-course-template/materials/01-render_guidelines.html</a> for an idea of how to organize it</p>
+<p>The coreR course structure is a website with a left sidebar to navigate among lessons and a right sidebar to show the contents of the current lesson.</p>
+<section id="quarto.yml" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="quarto.yml"><span class="header-section-number">1</span> <code>_quarto.yml</code></h2>
+<p>In the course repository, the <code>_quarto.yml</code> contains all the information on how to render the website.</p>
+</section>
+<section id="lessons" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="lessons"><span class="header-section-number">2</span> Lessons</h2>
+<p>The lesson <code>.qmd</code> files are copied out of the lessons package (<code>{coreRlessons}</code> by default) and into the course repository. To maintain some order, a prefix is appended to the lesson names, e.g., <code>s01_r_programming_introduction.qmd</code>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+.Rmd vs .qmd
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For consistency, lesson files must be Quarto documents with a <code>.qmd</code> extension and a yaml header containing only the title. Older lessons in <code>.Rmd</code> format should be updated.</p>
+</div>
+</div>
+<section id="lesson-supporting-files" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="lesson-supporting-files"><span class="header-section-number">2.1</span> Lesson supporting files</h3>
+<p>Some lessons link to external images, data, or embedded slides. These files are stored in directories named <code>images</code>, <code>data</code>, and <code>slides</code> respectively. For a given lesson, correspondingly named subdirectories will appear in each of these image/data/slides directories, like this (for a lesson <code>s01_r_programming_introduction.qmd</code>):</p>
+<pre><code>&lt;project root&gt;
+  |-- s01_r_programming_introduction.qmd  ### the lesson document
+  |-- s02_github_introduction.qmd         ### etc
+  |
+  |-- data
+  |  |-- r_programming_introduction
+  |     |-- dataset1.csv ### filename as called in lesson qmd
+  |  
+  |-- images
+  |  |-- r_programming_introduction
+  |  |  |-- image1.png ### filename as called in lesson qmd
+  |  |  |-- image2.png ### etc
+  |  |
+  |  |-- github_introduction
+  |     |-- image1.png ### filename as called in lesson qmd
+  |     |-- image2.png ### etc
+  |
+  |-- slides
+  |  |-- r_programming_introduction 
+  |  |  |-- slides.qmd        ### filename as embedded in lesson qmd
+  |  |  |-- lesson_style.scss ### filename as noted in the slides qmd
+  |  |
+  |  |-- github_introduction
+  |     |-- github_slides.qmd ### filename as called in lesson qmd
+  |     |-- style.css         ### etc
+ ...   ...</code></pre>
+<p>If a lesson <em>does not</em> have supporting files, e.g., no images, then there may not be a corresponding folder (e.g., the <code>github_introduction.qmd</code> lesson above does not have a data folder!)</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+File structure in created course vs.&nbsp;in <code>coreRlessons</code> package
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The file structure inside the <code>coreRlessons</code> package is similar except:</p>
+<ul>
+<li>the lesson <code>.qmd</code>s and supporting files/folders all live in the <code>inst</code> folder inside the package repository</li>
+<li>the supporting files folders are all prefaced with <code>lesson_</code> (e.g., <code>lesson_data</code>) - this is because R packages don’t like a folder called <code>data</code> in the <code>inst</code> folder, since it may interact with the <code>data</code> folder in the root.</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="extensions-and-formatting" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="extensions-and-formatting"><span class="header-section-number">3</span> Extensions and formatting</h2>
+<ul>
+<li>scss etc in the <code>_extensions</code> folder? or in root?</li>
+<li>if extension, how to update styling (separate from content)</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

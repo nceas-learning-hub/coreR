@@ -175,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">The <code>coreR</code> package</span></a>
+ <span class="menu-text">The <code>{coreR}</code> package</span></a>
   </div>
 </li>
       </ul>
@@ -279,14 +279,14 @@ The name of the Github organization to which the course will belong.
 course_title    
 A brief but descriptive title for the course. If NULL (default), the title will be set the same as the project name.
 
-course_description  
+course_desc 
 A sentence or two describing the course. If NULL (default), will be left empty.
 
 start_date  
-The starting date (as character, so any preferred format). If NULL, will be left empty.
+The starting date (as character, so any preferred format). If NULL, will default to 1/1/24
 
 end_date    
-The ending date (use same format as start_date). If NULL, and start_date is NULL, will be left empty.
+The ending date (use same format as start_date). If NULL, and start_date is NULL, will default to 12/31/24
 
 loc 
 The file location where the course repository will be created. Defaults to the current working directory.

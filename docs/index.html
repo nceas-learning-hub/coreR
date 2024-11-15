@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>The coreR package – coreR - NCEAS Learning Hub</title>
+<title>The {coreR} package – coreR - NCEAS Learning Hub</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -123,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">The <code>coreR</code> package</h1>
+          <h1 class="quarto-secondary-nav-title">The <code>{coreR}</code> package</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -135,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">The <code>coreR</code> package</h1>
+      <h1 class="title d-none d-lg-block">The <code>{coreR}</code> package</h1>
                       </div>
   </div>
     
@@ -175,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">The <code>coreR</code> package</span></a>
+ <span class="menu-text">The <code>{coreR}</code> package</span></a>
   </div>
 </li>
       </ul>
@@ -248,14 +282,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#course-development-with-corer" id="toc-course-development-with-corer" class="nav-link active" data-scroll-target="#course-development-with-corer">Course development with <code>coreR</code></a></li>
-  <li><a href="#why-corer" id="toc-why-corer" class="nav-link" data-scroll-target="#why-corer"><span class="header-section-number">1</span> Why <code>coreR</code>?</a>
+  <li><a href="#course-development-with-corer" id="toc-course-development-with-corer" class="nav-link active" data-scroll-target="#course-development-with-corer">Course development with <code>{coreR}</code></a></li>
+  <li><a href="#quickie-overview-of-main-functions" id="toc-quickie-overview-of-main-functions" class="nav-link" data-scroll-target="#quickie-overview-of-main-functions"><span class="header-section-number">1</span> Quickie overview of main functions</a></li>
+  <li><a href="#why-corer" id="toc-why-corer" class="nav-link" data-scroll-target="#why-corer"><span class="header-section-number">2</span> Why <code>{coreR}</code>?</a>
   <ul class="collapse">
-  <li><a href="#where-were-at" id="toc-where-were-at" class="nav-link" data-scroll-target="#where-were-at"><span class="header-section-number">1.1</span> Where we’re at</a></li>
-  <li><a href="#where-were-going" id="toc-where-were-going" class="nav-link" data-scroll-target="#where-were-going"><span class="header-section-number">1.2</span> Where we’re going</a></li>
+  <li><a href="#where-were-at" id="toc-where-were-at" class="nav-link" data-scroll-target="#where-were-at"><span class="header-section-number">2.1</span> Where we’re at</a></li>
+  <li><a href="#where-were-going" id="toc-where-were-going" class="nav-link" data-scroll-target="#where-were-going"><span class="header-section-number">2.2</span> Where we’re going</a></li>
   </ul></li>
-  <li><a href="#what-does-corer-do" id="toc-what-does-corer-do" class="nav-link" data-scroll-target="#what-does-corer-do"><span class="header-section-number">2</span> What does <code>coreR</code> do?</a></li>
-  <li><a href="#what-does-corerlessons-do" id="toc-what-does-corerlessons-do" class="nav-link" data-scroll-target="#what-does-corerlessons-do"><span class="header-section-number">3</span> What does <code>coreRlessons</code> do?</a></li>
+  <li><a href="#what-does-corer-do" id="toc-what-does-corer-do" class="nav-link" data-scroll-target="#what-does-corer-do"><span class="header-section-number">3</span> What does <code>coreR</code> do?</a></li>
+  <li><a href="#what-does-corerlessons-do" id="toc-what-does-corerlessons-do" class="nav-link" data-scroll-target="#what-does-corerlessons-do"><span class="header-section-number">4</span> What does <code>{coreRlessons}</code> do?</a></li>
   </ul>
 </nav>
     </div>
@@ -267,19 +302,37 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="course-development-with-corer" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="course-development-with-corer">Course development with <code>coreR</code></h2>
-<p>The <code>coreR</code> package (and its sister package, <code>coreRlessons</code>) were developed to make it easy to set up a course for the NCEAS Learning Hub, particularly the <strong>coreR</strong> course offerings.</p>
+<h2 class="unnumbered anchored" data-anchor-id="course-development-with-corer">Course development with <code>{coreR}</code></h2>
+<p>The <code>{coreR}</code> package (and its sister package, <code>{coreRlessons}</code>) were developed to make it easy to set up a course for the NCEAS Learning Hub, particularly the <strong><code>{coreR}</code></strong> course offerings.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+To install:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will need to install both <code>{coreR}</code> (for functionality) and <code>{coreRlessons}</code> (for content):</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'nceas-learning-hub/coreR'</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'nceas-learning-hub/coreRlessons'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
-<section id="why-corer" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="why-corer"><span class="header-section-number">1</span> Why <code>coreR</code>?</h2>
-<section id="where-were-at" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="where-were-at"><span class="header-section-number">1.1</span> Where we’re at</h3>
+<section id="quickie-overview-of-main-functions" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="quickie-overview-of-main-functions"><span class="header-section-number">1</span> Quickie overview of main functions</h2>
+</section>
+<section id="why-corer" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="why-corer"><span class="header-section-number">2</span> Why <code>{coreR}</code>?</h2>
+<section id="where-were-at" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="where-were-at"><span class="header-section-number">2.1</span> Where we’re at</h3>
 <p>For years NCEAS has been offering courses through the Learning Hub and the Arctic Data Center, among other efforts. The course offerings include lessons on collaboration with Git and GitHub, reproducibility with R and RStudio, and fundamental techniques of working with all kinds of data. As of October 2024, these courses have been built in the <a href="https://github.com/NCEAS/nceas-training">nceas-training</a> repository of the <a href="https://github.com/NCEAS">NCEAS GitHub organization</a>, with each course built on a separate branch. These courses are rendered by GitHub actions set up in the <a href="https://github.com/NCEAS/repro-research-course">repro-research-course</a> repository, where the courses are linked to an NCEAS URL, and archived in the repo.</p>
 <p>This system has worked for years, and the lesson offerings have grown organically over time to 116 different <code>.Rmd</code>s and <code>.qmd</code>s. But setting up a new course is a little tricky - after establishing a desired curriculum, an instructor needs to manually identify relevant lessons from a long list of files with inconsistent file naming, and then needs to manually set up files to link to these lessons, all within a new branch to avoid affecting other lessons (and to work with the Github actions to publish the course). The lesson catalog contains duplicates, updated versions, deprecated lessons, etc. The instructor then frequently has to make edits to the lessons, on that separate branch. As of this writing, there are 43 separate branches, each likely holding improvements and valuable edits that cannot easily be resolved into the “best” version of each lesson. This branch method works, but is fragile, difficult to navigate, and uses branches in a different way than typically designed.</p>
 </section>
-<section id="where-were-going" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="where-were-going"><span class="header-section-number">1.2</span> Where we’re going</h3>
-<p>By setting up a new NCEAS Learning Hub organization, and designing the coreR and coreRlessons packages, we can accomplish a few things:</p>
+<section id="where-were-going" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="where-were-going"><span class="header-section-number">2.2</span> Where we’re going</h3>
+<p>By setting up a new NCEAS Learning Hub organization, and designing the <code>{coreR}</code> and <code>{coreRlessons}</code> packages, we can accomplish a few things:</p>
 <ol type="1">
 <li>Make it far easier to set up a typical Learning Hub training by automating many of the setup steps.</li>
 <li>Curate the course offerings and try to outline some standards for adding additional course offerings, for consistency.</li>
@@ -290,19 +343,19 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 </section>
 </section>
-<section id="what-does-corer-do" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="what-does-corer-do"><span class="header-section-number">2</span> What does <code>coreR</code> do?</h2>
+<section id="what-does-corer-do" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="what-does-corer-do"><span class="header-section-number">3</span> What does <code>coreR</code> do?</h2>
 <p>The <code>coreR</code> package has a few key functions:</p>
 <ul>
 <li><code>init_course()</code> initializes a course by setting up a new repository and adding some metadata about the course based on user input.</li>
-<li><code>setup_lessons()</code> copies selected lessons from the <code>coreRlessons</code> package into the course repository and sets up the structure of the course as a Quarto website.</li>
-<li><code>update_lessons()</code> will update lessons (or revert to older ones) based on user selection of a version of the <code>coreRlessons</code> package.</li>
+<li><code>setup_lessons()</code> copies selected lessons from the <code>{coreRlessons}</code> package into the course repository and sets up the structure of the course as a Quarto website.</li>
+<li><code>update_lessons()</code> will update lessons (or revert to older ones) based on user selection of a version of the <code>{coreRlessons}</code> package.</li>
 </ul>
 </section>
-<section id="what-does-corerlessons-do" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="what-does-corerlessons-do"><span class="header-section-number">3</span> What does <code>coreRlessons</code> do?</h2>
-<p>The <code>coreRlessons</code> package doesn’t have any functions, but instead houses lessons as Quarto documents, along with templates and support files to construct a course. Why is this separate from <code>coreR</code>? First, it seemed like a good idea to allow the course lesson <em>content</em> to be version-controlled separately from the package containing the <em>functions.</em> Second, this allows for other instructors or organizations to create their own lesson content or structure that can play nicely with the coreR functionality - for example, if the curriculum for the Delta Stewardship Council diverged from the coreR curriculum, we could create a <code>deltaLessons</code> package to contain different content, and even a different style or format. Third, it allows an instructor to choose different versions of the content and perhaps update an old course, if the materials for the old course are significantly out of date.</p>
-<p>Clearly we need a coreR hex sticker!</p>
+<section id="what-does-corerlessons-do" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="what-does-corerlessons-do"><span class="header-section-number">4</span> What does <code>{coreRlessons}</code> do?</h2>
+<p>The <code>{coreRlessons}</code> package doesn’t have any functions, but instead houses lessons as Quarto documents, along with templates and support files to construct a course. Why is this separate from <code>{coreR}</code>? First, it seemed like a good idea to allow the course lesson <em>content</em> to be version-controlled separately from the package containing the <em>functions.</em> Second, this allows for other instructors or organizations to create their own lesson content or structure that can play nicely with the <code>{coreR}</code> functionality - for example, if the curriculum for the Delta Stewardship Council diverged from the <code>{coreR}</code> curriculum, we could create a <code>{deltaLessons}</code> package to contain different content, and even a different style or format. Third, it allows an instructor to choose different versions of the content and perhaps update an old course, if the materials for the old course are significantly out of date.</p>
+<p>Clearly we need a <code>{coreR}</code> hex sticker!</p>
 
 
 </section>

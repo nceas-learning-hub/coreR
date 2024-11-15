@@ -2,56 +2,67 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "The coreR package",
+    "title": "The {coreR} package",
     "section": "",
-    "text": "The coreR package (and its sister package, coreRlessons) were developed to make it easy to set up a course for the NCEAS Learning Hub, particularly the coreR course offerings.",
+    "text": "The {coreR} package (and its sister package, {coreRlessons}) were developed to make it easy to set up a course for the NCEAS Learning Hub, particularly the {coreR} course offerings.\n\n\n\n\n\n\nTo install:\n\n\n\nYou will need to install both {coreR} (for functionality) and {coreRlessons} (for content):\nremotes::install_github('nceas-learning-hub/coreR')\nremotes::install_github('nceas-learning-hub/coreRlessons')",
     "crumbs": [
       "Welcome",
-      "The `coreR` package"
+      "The `{coreR}` package"
     ]
   },
   {
     "objectID": "index.html#course-development-with-corer",
     "href": "index.html#course-development-with-corer",
-    "title": "The coreR package",
+    "title": "The {coreR} package",
     "section": "",
-    "text": "The coreR package (and its sister package, coreRlessons) were developed to make it easy to set up a course for the NCEAS Learning Hub, particularly the coreR course offerings.",
+    "text": "The {coreR} package (and its sister package, {coreRlessons}) were developed to make it easy to set up a course for the NCEAS Learning Hub, particularly the {coreR} course offerings.\n\n\n\n\n\n\nTo install:\n\n\n\nYou will need to install both {coreR} (for functionality) and {coreRlessons} (for content):\nremotes::install_github('nceas-learning-hub/coreR')\nremotes::install_github('nceas-learning-hub/coreRlessons')",
     "crumbs": [
       "Welcome",
-      "The `coreR` package"
+      "The `{coreR}` package"
+    ]
+  },
+  {
+    "objectID": "index.html#quickie-overview-of-main-functions",
+    "href": "index.html#quickie-overview-of-main-functions",
+    "title": "The {coreR} package",
+    "section": "1 Quickie overview of main functions",
+    "text": "1 Quickie overview of main functions",
+    "crumbs": [
+      "Welcome",
+      "The `{coreR}` package"
     ]
   },
   {
     "objectID": "index.html#why-corer",
     "href": "index.html#why-corer",
-    "title": "The coreR package",
-    "section": "1 Why coreR?",
-    "text": "1 Why coreR?\n\n1.1 Where we’re at\nFor years NCEAS has been offering courses through the Learning Hub and the Arctic Data Center, among other efforts. The course offerings include lessons on collaboration with Git and GitHub, reproducibility with R and RStudio, and fundamental techniques of working with all kinds of data. As of October 2024, these courses have been built in the nceas-training repository of the NCEAS GitHub organization, with each course built on a separate branch. These courses are rendered by GitHub actions set up in the repro-research-course repository, where the courses are linked to an NCEAS URL, and archived in the repo.\nThis system has worked for years, and the lesson offerings have grown organically over time to 116 different .Rmds and .qmds. But setting up a new course is a little tricky - after establishing a desired curriculum, an instructor needs to manually identify relevant lessons from a long list of files with inconsistent file naming, and then needs to manually set up files to link to these lessons, all within a new branch to avoid affecting other lessons (and to work with the Github actions to publish the course). The lesson catalog contains duplicates, updated versions, deprecated lessons, etc. The instructor then frequently has to make edits to the lessons, on that separate branch. As of this writing, there are 43 separate branches, each likely holding improvements and valuable edits that cannot easily be resolved into the “best” version of each lesson. This branch method works, but is fragile, difficult to navigate, and uses branches in a different way than typically designed.\n\n\n1.2 Where we’re going\nBy setting up a new NCEAS Learning Hub organization, and designing the coreR and coreRlessons packages, we can accomplish a few things:\n\nMake it far easier to set up a typical Learning Hub training by automating many of the setup steps.\nCurate the course offerings and try to outline some standards for adding additional course offerings, for consistency.\nUse distinct repositories to host each course, rather than branches all held within a single repository.\nUpdate course lessons so that old course offerings can be brought into line with current course offerings (or lessons can be reverted to old versions).\nUse GitHub Pages to publish courses to the web.\nPut into practice many of the workflows we preach :)",
+    "title": "The {coreR} package",
+    "section": "2 Why {coreR}?",
+    "text": "2 Why {coreR}?\n\n2.1 Where we’re at\nFor years NCEAS has been offering courses through the Learning Hub and the Arctic Data Center, among other efforts. The course offerings include lessons on collaboration with Git and GitHub, reproducibility with R and RStudio, and fundamental techniques of working with all kinds of data. As of October 2024, these courses have been built in the nceas-training repository of the NCEAS GitHub organization, with each course built on a separate branch. These courses are rendered by GitHub actions set up in the repro-research-course repository, where the courses are linked to an NCEAS URL, and archived in the repo.\nThis system has worked for years, and the lesson offerings have grown organically over time to 116 different .Rmds and .qmds. But setting up a new course is a little tricky - after establishing a desired curriculum, an instructor needs to manually identify relevant lessons from a long list of files with inconsistent file naming, and then needs to manually set up files to link to these lessons, all within a new branch to avoid affecting other lessons (and to work with the Github actions to publish the course). The lesson catalog contains duplicates, updated versions, deprecated lessons, etc. The instructor then frequently has to make edits to the lessons, on that separate branch. As of this writing, there are 43 separate branches, each likely holding improvements and valuable edits that cannot easily be resolved into the “best” version of each lesson. This branch method works, but is fragile, difficult to navigate, and uses branches in a different way than typically designed.\n\n\n2.2 Where we’re going\nBy setting up a new NCEAS Learning Hub organization, and designing the {coreR} and {coreRlessons} packages, we can accomplish a few things:\n\nMake it far easier to set up a typical Learning Hub training by automating many of the setup steps.\nCurate the course offerings and try to outline some standards for adding additional course offerings, for consistency.\nUse distinct repositories to host each course, rather than branches all held within a single repository.\nUpdate course lessons so that old course offerings can be brought into line with current course offerings (or lessons can be reverted to old versions).\nUse GitHub Pages to publish courses to the web.\nPut into practice many of the workflows we preach :)",
     "crumbs": [
       "Welcome",
-      "The `coreR` package"
+      "The `{coreR}` package"
     ]
   },
   {
     "objectID": "index.html#what-does-corer-do",
     "href": "index.html#what-does-corer-do",
-    "title": "The coreR package",
-    "section": "2 What does coreR do?",
-    "text": "2 What does coreR do?\nThe coreR package has a few key functions:\n\ninit_course() initializes a course by setting up a new repository and adding some metadata about the course based on user input.\nsetup_lessons() copies selected lessons from the coreRlessons package into the course repository and sets up the structure of the course as a Quarto website.\nupdate_lessons() will update lessons (or revert to older ones) based on user selection of a version of the coreRlessons package.",
+    "title": "The {coreR} package",
+    "section": "3 What does coreR do?",
+    "text": "3 What does coreR do?\nThe coreR package has a few key functions:\n\ninit_course() initializes a course by setting up a new repository and adding some metadata about the course based on user input.\nsetup_lessons() copies selected lessons from the {coreRlessons} package into the course repository and sets up the structure of the course as a Quarto website.\nupdate_lessons() will update lessons (or revert to older ones) based on user selection of a version of the {coreRlessons} package.",
     "crumbs": [
       "Welcome",
-      "The `coreR` package"
+      "The `{coreR}` package"
     ]
   },
   {
     "objectID": "index.html#what-does-corerlessons-do",
     "href": "index.html#what-does-corerlessons-do",
-    "title": "The coreR package",
-    "section": "3 What does coreRlessons do?",
-    "text": "3 What does coreRlessons do?\nThe coreRlessons package doesn’t have any functions, but instead houses lessons as Quarto documents, along with templates and support files to construct a course. Why is this separate from coreR? First, it seemed like a good idea to allow the course lesson content to be version-controlled separately from the package containing the functions. Second, this allows for other instructors or organizations to create their own lesson content or structure that can play nicely with the coreR functionality - for example, if the curriculum for the Delta Stewardship Council diverged from the coreR curriculum, we could create a deltaLessons package to contain different content, and even a different style or format. Third, it allows an instructor to choose different versions of the content and perhaps update an old course, if the materials for the old course are significantly out of date.\nClearly we need a coreR hex sticker!",
+    "title": "The {coreR} package",
+    "section": "4 What does {coreRlessons} do?",
+    "text": "4 What does {coreRlessons} do?\nThe {coreRlessons} package doesn’t have any functions, but instead houses lessons as Quarto documents, along with templates and support files to construct a course. Why is this separate from {coreR}? First, it seemed like a good idea to allow the course lesson content to be version-controlled separately from the package containing the functions. Second, this allows for other instructors or organizations to create their own lesson content or structure that can play nicely with the {coreR} functionality - for example, if the curriculum for the Delta Stewardship Council diverged from the {coreR} curriculum, we could create a {deltaLessons} package to contain different content, and even a different style or format. Third, it allows an instructor to choose different versions of the content and perhaps update an old course, if the materials for the old course are significantly out of date.\nClearly we need a {coreR} hex sticker!",
     "crumbs": [
       "Welcome",
-      "The `coreR` package"
+      "The `{coreR}` package"
     ]
   },
   {
@@ -103,7 +114,7 @@
     "href": "3_custom_lessons.html",
     "title": "Customize lessons",
     "section": "",
-    "text": "Vignette about customizing a lesson (structure basics, slides, images, data)",
+    "text": "Vignette about customizing a lesson (structure basics, slides, images, data)\n\nrearranging the schedule\n\nuse setup_lessons with new inputs and overwrite = TRUE\nmanually edit the _quarto.yml to rearrange lessons in the desired order\n\nnote, the numbered prefixes are only for file organization and are not functional, so switching the first and second lessons, no need to rename the files, just swap the lines in the _quarto.yml even if they look out of order\n\n\ncustomize an existing lesson\n\nrecommend changing file name - to protect it from update_lessons and to distinguish it from existing versions of lessons\nrecommend changing names on supporting folders to reflect the file name\n\nif you like your changes, and think we should incorporate them, feel free to fork the coreRlessons, update the files accordingly (see the structure guide and content guide), and submit a pull request.\nadding a new lesson\n\ncreate your own qmd, create file structure for supporting files, and edit the _quarto.yml to put the new lesson in the proper place in the schedule.",
     "crumbs": [
       "Building a course",
       "Customize lessons"
@@ -114,7 +125,7 @@
     "href": "1_init_course.html",
     "title": "Initialize a course",
     "section": "",
-    "text": "Initialize a coreR course\n\nDescription\n\nThis will set up the basic project structure for a new course: a project repository, plus a file containing metadata about the course. The metadata file will be used to help populate details in later functions.\n\nUsage\ninit_course(\n  course_proj,\n  course_org = \"nceas-learning-hub\",\n  course_title = NULL,\n  course_description = NULL,\n  start_date = NULL,\n  end_date = NULL,\n  loc = \".\"\n)\nArguments\ncourse_proj \nThe name of the project directory (and Github repo) for the course. Recommended format: YYYY-MM-coreR.\n\ncourse_org  \nThe name of the Github organization to which the course will belong.\n\ncourse_title    \nA brief but descriptive title for the course. If NULL (default), the title will be set the same as the project name.\n\ncourse_description  \nA sentence or two describing the course. If NULL (default), will be left empty.\n\nstart_date  \nThe starting date (as character, so any preferred format). If NULL, will be left empty.\n\nend_date    \nThe ending date (use same format as start_date). If NULL, and start_date is NULL, will be left empty.\n\nloc \nThe file location where the course repository will be created. Defaults to the current working directory.\n\nValue\nstuff\n\nExamples\nRun examples\n\n## Not run: \ninit_course(course_proj = \"2024-10-coreR\",\n            course_title = \"CoreR October 2024\",\n            course_description = \"CoreR course offered at NCEAS in Oct 2024\",\n            start_date = \"Oct. 6, 2024\",\n            end_date = \"Oct. 10, 2024\")\n\n## End(Not run)",
+    "text": "Initialize a coreR course\n\nDescription\n\nThis will set up the basic project structure for a new course: a project repository, plus a file containing metadata about the course. The metadata file will be used to help populate details in later functions.\n\nUsage\ninit_course(\n  course_proj,\n  course_org = \"nceas-learning-hub\",\n  course_title = NULL,\n  course_description = NULL,\n  start_date = NULL,\n  end_date = NULL,\n  loc = \".\"\n)\nArguments\ncourse_proj \nThe name of the project directory (and Github repo) for the course. Recommended format: YYYY-MM-coreR.\n\ncourse_org  \nThe name of the Github organization to which the course will belong.\n\ncourse_title    \nA brief but descriptive title for the course. If NULL (default), the title will be set the same as the project name.\n\ncourse_desc \nA sentence or two describing the course. If NULL (default), will be left empty.\n\nstart_date  \nThe starting date (as character, so any preferred format). If NULL, will default to 1/1/24\n\nend_date    \nThe ending date (use same format as start_date). If NULL, and start_date is NULL, will default to 12/31/24\n\nloc \nThe file location where the course repository will be created. Defaults to the current working directory.\n\nValue\nstuff\n\nExamples\nRun examples\n\n## Not run: \ninit_course(course_proj = \"2024-10-coreR\",\n            course_title = \"CoreR October 2024\",\n            course_description = \"CoreR course offered at NCEAS in Oct 2024\",\n            start_date = \"Oct. 6, 2024\",\n            end_date = \"Oct. 10, 2024\")\n\n## End(Not run)",
     "crumbs": [
       "Building a course",
       "Initialize a course"

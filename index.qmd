@@ -6,8 +6,33 @@ title: "The `{coreR}` package"
 
 The `{coreR}` package (and its sister package, `{coreRlessons}`) were developed to make it easy to set up a course for the NCEAS Learning Hub, particularly the **`{coreR}`** course offerings.
 
-## Quickie overview of main functions
+:::{.callout-note}
+### To install:
 
+You will need to install both `{coreR}` (for functionality) and `{coreRlessons}` (for content):
+```r
+remotes::install_github('nceas-learning-hub/coreR')
+remotes::install_github('nceas-learning-hub/coreRlessons')
+```
+:::
+
+## What does `{coreR}` do?
+
+The `{coreR}` package has a few key functions:
+
+* `init_course()` initializes a course by setting up a new repository and adding some metadata about the course based on user input.
+* `setup_lessons()` copies selected lessons from the `{coreRlessons}` package into the course repository and sets up the structure of the course as a Quarto website.
+* `update_lessons()` will update lessons (or revert to older ones) based on user selection of a version of the `{coreRlessons}` package.
+
+## What does `{coreRlessons}` do?
+
+The `{coreRlessons}` package doesn't have any functions, but instead houses lessons as Quarto documents, along with templates and support files to construct a course.  Why is this separate from `{coreR}`?  
+
+* First, it seemed like a good idea to allow the course lesson _content_ to be version-controlled separately from the package containing the _functions._  
+* Second, this allows for other instructors or organizations to create their own lesson content or structure that can play nicely with the `{coreR}` functionality - for example, if the curriculum for the Delta Stewardship Council diverged from the `{coreR}` curriculum, we could create a `{deltaLessons}` package to contain different content, and even a different style or format.  
+* Third, it allows an instructor to choose different versions of the content and perhaps update an old course, if the materials for the old course are significantly out of date, using GitHub release tags that refer to different versions of the content related to specific points in time.
+
+<!-- Clearly we need a `{coreR}` hex sticker! -->
 
 
 ## Why `{coreR}`?
@@ -22,23 +47,10 @@ This system has worked for years, and the lesson offerings have grown organicall
 
 By setting up a new NCEAS Learning Hub organization, and designing the `{coreR}` and `{coreRlessons}` packages, we can accomplish a few things:
 
-1. Make it far easier to set up a typical Learning Hub training by automating many of the setup steps.
+1. Make it far easier to set up a typical Learning Hub training by automating and streamlining many of the setup steps.
 2. Curate the course offerings and try to outline some standards for adding additional course offerings, for consistency.
 3. Use distinct repositories to host each course, rather than branches all held within a single repository.
 4. Update course lessons so that old course offerings can be brought into line with current course offerings (or lessons can be reverted to old versions).
 5. Use GitHub Pages to publish courses to the web.
 6. Put into practice many of the workflows we preach :)
 
-## What does `coreR` do?
-
-The `coreR` package has a few key functions:
-
-* `init_course()` initializes a course by setting up a new repository and adding some metadata about the course based on user input.
-* `setup_lessons()` copies selected lessons from the `{coreRlessons}` package into the course repository and sets up the structure of the course as a Quarto website.
-* `update_lessons()` will update lessons (or revert to older ones) based on user selection of a version of the `{coreRlessons}` package.
-
-## What does `{coreRlessons}` do?
-
-The `{coreRlessons}` package doesn't have any functions, but instead houses lessons as Quarto documents, along with templates and support files to construct a course.  Why is this separate from `{coreR}`?  First, it seemed like a good idea to allow the course lesson _content_ to be version-controlled separately from the package containing the _functions._  Second, this allows for other instructors or organizations to create their own lesson content or structure that can play nicely with the `{coreR}` functionality - for example, if the curriculum for the Delta Stewardship Council diverged from the `{coreR}` curriculum, we could create a `{deltaLessons}` package to contain different content, and even a different style or format.  Third, it allows an instructor to choose different versions of the content and perhaps update an old course, if the materials for the old course are significantly out of date.
-
-Clearly we need a `{coreR}` hex sticker!

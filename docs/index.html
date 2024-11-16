@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<link rel="stylesheet" href="lh-style.css">
+<link rel="stylesheet" href="_extensions/nceas-learning-hub/lh_theme/lh-style.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -283,14 +283,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#course-development-with-corer" id="toc-course-development-with-corer" class="nav-link active" data-scroll-target="#course-development-with-corer">Course development with <code>{coreR}</code></a></li>
-  <li><a href="#quickie-overview-of-main-functions" id="toc-quickie-overview-of-main-functions" class="nav-link" data-scroll-target="#quickie-overview-of-main-functions"><span class="header-section-number">1</span> Quickie overview of main functions</a></li>
-  <li><a href="#why-corer" id="toc-why-corer" class="nav-link" data-scroll-target="#why-corer"><span class="header-section-number">2</span> Why <code>{coreR}</code>?</a>
+  <li><a href="#what-does-corer-do" id="toc-what-does-corer-do" class="nav-link" data-scroll-target="#what-does-corer-do"><span class="header-section-number">1</span> What does <code>{coreR}</code> do?</a></li>
+  <li><a href="#what-does-corerlessons-do" id="toc-what-does-corerlessons-do" class="nav-link" data-scroll-target="#what-does-corerlessons-do"><span class="header-section-number">2</span> What does <code>{coreRlessons}</code> do?</a></li>
+  <li><a href="#why-corer" id="toc-why-corer" class="nav-link" data-scroll-target="#why-corer"><span class="header-section-number">3</span> Why <code>{coreR}</code>?</a>
   <ul class="collapse">
-  <li><a href="#where-were-at" id="toc-where-were-at" class="nav-link" data-scroll-target="#where-were-at"><span class="header-section-number">2.1</span> Where we’re at</a></li>
-  <li><a href="#where-were-going" id="toc-where-were-going" class="nav-link" data-scroll-target="#where-were-going"><span class="header-section-number">2.2</span> Where we’re going</a></li>
+  <li><a href="#where-were-at" id="toc-where-were-at" class="nav-link" data-scroll-target="#where-were-at"><span class="header-section-number">3.1</span> Where we’re at</a></li>
+  <li><a href="#where-were-going" id="toc-where-were-going" class="nav-link" data-scroll-target="#where-were-going"><span class="header-section-number">3.2</span> Where we’re going</a></li>
   </ul></li>
-  <li><a href="#what-does-corer-do" id="toc-what-does-corer-do" class="nav-link" data-scroll-target="#what-does-corer-do"><span class="header-section-number">3</span> What does <code>coreR</code> do?</a></li>
-  <li><a href="#what-does-corerlessons-do" id="toc-what-does-corerlessons-do" class="nav-link" data-scroll-target="#what-does-corerlessons-do"><span class="header-section-number">4</span> What does <code>{coreRlessons}</code> do?</a></li>
   </ul>
 </nav>
     </div>
@@ -320,44 +319,48 @@ To install:
 </div>
 </div>
 </section>
-<section id="quickie-overview-of-main-functions" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="quickie-overview-of-main-functions"><span class="header-section-number">1</span> Quickie overview of main functions</h2>
-</section>
-<section id="why-corer" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="why-corer"><span class="header-section-number">2</span> Why <code>{coreR}</code>?</h2>
-<section id="where-were-at" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="where-were-at"><span class="header-section-number">2.1</span> Where we’re at</h3>
-<p>For years NCEAS has been offering courses through the Learning Hub and the Arctic Data Center, among other efforts. The course offerings include lessons on collaboration with Git and GitHub, reproducibility with R and RStudio, and fundamental techniques of working with all kinds of data. As of October 2024, these courses have been built in the <a href="https://github.com/NCEAS/nceas-training">nceas-training</a> repository of the <a href="https://github.com/NCEAS">NCEAS GitHub organization</a>, with each course built on a separate branch. These courses are rendered by GitHub actions set up in the <a href="https://github.com/NCEAS/repro-research-course">repro-research-course</a> repository, where the courses are linked to an NCEAS URL, and archived in the repo.</p>
-<p>This system has worked for years, and the lesson offerings have grown organically over time to 116 different <code>.Rmd</code>s and <code>.qmd</code>s. But setting up a new course is a little tricky - after establishing a desired curriculum, an instructor needs to manually identify relevant lessons from a long list of files with inconsistent file naming, and then needs to manually set up files to link to these lessons, all within a new branch to avoid affecting other lessons (and to work with the Github actions to publish the course). The lesson catalog contains duplicates, updated versions, deprecated lessons, etc. The instructor then frequently has to make edits to the lessons, on that separate branch. As of this writing, there are 43 separate branches, each likely holding improvements and valuable edits that cannot easily be resolved into the “best” version of each lesson. This branch method works, but is fragile, difficult to navigate, and uses branches in a different way than typically designed.</p>
-</section>
-<section id="where-were-going" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="where-were-going"><span class="header-section-number">2.2</span> Where we’re going</h3>
-<p>By setting up a new NCEAS Learning Hub organization, and designing the <code>{coreR}</code> and <code>{coreRlessons}</code> packages, we can accomplish a few things:</p>
-<ol type="1">
-<li>Make it far easier to set up a typical Learning Hub training by automating many of the setup steps.</li>
-<li>Curate the course offerings and try to outline some standards for adding additional course offerings, for consistency.</li>
-<li>Use distinct repositories to host each course, rather than branches all held within a single repository.</li>
-<li>Update course lessons so that old course offerings can be brought into line with current course offerings (or lessons can be reverted to old versions).</li>
-<li>Use GitHub Pages to publish courses to the web.</li>
-<li>Put into practice many of the workflows we preach :)</li>
-</ol>
-</section>
-</section>
-<section id="what-does-corer-do" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="what-does-corer-do"><span class="header-section-number">3</span> What does <code>coreR</code> do?</h2>
-<p>The <code>coreR</code> package has a few key functions:</p>
+<section id="what-does-corer-do" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="what-does-corer-do"><span class="header-section-number">1</span> What does <code>{coreR}</code> do?</h2>
+<p>The <code>{coreR}</code> package has a few key functions:</p>
 <ul>
 <li><code>init_course()</code> initializes a course by setting up a new repository and adding some metadata about the course based on user input.</li>
 <li><code>setup_lessons()</code> copies selected lessons from the <code>{coreRlessons}</code> package into the course repository and sets up the structure of the course as a Quarto website.</li>
 <li><code>update_lessons()</code> will update lessons (or revert to older ones) based on user selection of a version of the <code>{coreRlessons}</code> package.</li>
 </ul>
 </section>
-<section id="what-does-corerlessons-do" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="what-does-corerlessons-do"><span class="header-section-number">4</span> What does <code>{coreRlessons}</code> do?</h2>
-<p>The <code>{coreRlessons}</code> package doesn’t have any functions, but instead houses lessons as Quarto documents, along with templates and support files to construct a course. Why is this separate from <code>{coreR}</code>? First, it seemed like a good idea to allow the course lesson <em>content</em> to be version-controlled separately from the package containing the <em>functions.</em> Second, this allows for other instructors or organizations to create their own lesson content or structure that can play nicely with the <code>{coreR}</code> functionality - for example, if the curriculum for the Delta Stewardship Council diverged from the <code>{coreR}</code> curriculum, we could create a <code>{deltaLessons}</code> package to contain different content, and even a different style or format. Third, it allows an instructor to choose different versions of the content and perhaps update an old course, if the materials for the old course are significantly out of date.</p>
-<p>Clearly we need a <code>{coreR}</code> hex sticker!</p>
+<section id="what-does-corerlessons-do" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="what-does-corerlessons-do"><span class="header-section-number">2</span> What does <code>{coreRlessons}</code> do?</h2>
+<p>The <code>{coreRlessons}</code> package doesn’t have any functions, but instead houses lessons as Quarto documents, along with templates and support files to construct a course. Why is this separate from <code>{coreR}</code>?</p>
+<ul>
+<li>First, it seemed like a good idea to allow the course lesson <em>content</em> to be version-controlled separately from the package containing the <em>functions.</em><br>
+</li>
+<li>Second, this allows for other instructors or organizations to create their own lesson content or structure that can play nicely with the <code>{coreR}</code> functionality - for example, if the curriculum for the Delta Stewardship Council diverged from the <code>{coreR}</code> curriculum, we could create a <code>{deltaLessons}</code> package to contain different content, and even a different style or format.<br>
+</li>
+<li>Third, it allows an instructor to choose different versions of the content and perhaps update an old course, if the materials for the old course are significantly out of date, using GitHub release tags that refer to different versions of the content related to specific points in time.</li>
+</ul>
+<!-- Clearly we need a `{coreR}` hex sticker! -->
+</section>
+<section id="why-corer" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="why-corer"><span class="header-section-number">3</span> Why <code>{coreR}</code>?</h2>
+<section id="where-were-at" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="where-were-at"><span class="header-section-number">3.1</span> Where we’re at</h3>
+<p>For years NCEAS has been offering courses through the Learning Hub and the Arctic Data Center, among other efforts. The course offerings include lessons on collaboration with Git and GitHub, reproducibility with R and RStudio, and fundamental techniques of working with all kinds of data. As of October 2024, these courses have been built in the <a href="https://github.com/NCEAS/nceas-training">nceas-training</a> repository of the <a href="https://github.com/NCEAS">NCEAS GitHub organization</a>, with each course built on a separate branch. These courses are rendered by GitHub actions set up in the <a href="https://github.com/NCEAS/repro-research-course">repro-research-course</a> repository, where the courses are linked to an NCEAS URL, and archived in the repo.</p>
+<p>This system has worked for years, and the lesson offerings have grown organically over time to 116 different <code>.Rmd</code>s and <code>.qmd</code>s. But setting up a new course is a little tricky - after establishing a desired curriculum, an instructor needs to manually identify relevant lessons from a long list of files with inconsistent file naming, and then needs to manually set up files to link to these lessons, all within a new branch to avoid affecting other lessons (and to work with the Github actions to publish the course). The lesson catalog contains duplicates, updated versions, deprecated lessons, etc. The instructor then frequently has to make edits to the lessons, on that separate branch. As of this writing, there are 43 separate branches, each likely holding improvements and valuable edits that cannot easily be resolved into the “best” version of each lesson. This branch method works, but is fragile, difficult to navigate, and uses branches in a different way than typically designed.</p>
+</section>
+<section id="where-were-going" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="where-were-going"><span class="header-section-number">3.2</span> Where we’re going</h3>
+<p>By setting up a new NCEAS Learning Hub organization, and designing the <code>{coreR}</code> and <code>{coreRlessons}</code> packages, we can accomplish a few things:</p>
+<ol type="1">
+<li>Make it far easier to set up a typical Learning Hub training by automating and streamlining many of the setup steps.</li>
+<li>Curate the course offerings and try to outline some standards for adding additional course offerings, for consistency.</li>
+<li>Use distinct repositories to host each course, rather than branches all held within a single repository.</li>
+<li>Update course lessons so that old course offerings can be brought into line with current course offerings (or lessons can be reverted to old versions).</li>
+<li>Use GitHub Pages to publish courses to the web.</li>
+<li>Put into practice many of the workflows we preach :)</li>
+</ol>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

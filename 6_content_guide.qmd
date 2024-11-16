@@ -4,35 +4,72 @@ title: Content guidelines
 
 See <https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html> for ideas
 
-### testing callouts:
+## Callouts
 
-NOTE it looks like including `title="title of callout"` in the callout doesn't work... and either does the header method that works for standard callouts... oh well, still pretty cool.  Look at NCEAS Learning Hub style sheet for color ideas.
+Quarto offers some built-in [callout blocks](https://quarto.org/docs/authoring/callouts.html) to set content off against the normal body text.  Note that we've customized the colors of our callouts to better match our course styling (see the `lh_theme` extension).  
+
+### Standard callouts
+
+There are five built-in callouts signalling different levels of urgency:
+
+* tip `{.callout-tip}`
+* note `{.callout-note}`
+* caution `{.callout-caution}`
+* warning `{.callout-warning}`
+* important `{.callout-important}`
+
+See the [callout reference](https://quarto.org/docs/authoring/callouts.html) for how to create these.
+
+Based on the color and icons, here are recommendations on when and how to use these, in descending order of urgency:
+
+::: {.callout-important}
+Use `{.callout-important}` to highlight things that the reader _must_ pay attention to, or essential ideas and concepts.
+:::
+
+::: {.callout-warning}
+Use `{.callout-warning}` to highlight common "gotchas" such as common user errors or unexpected behavior.
+:::
+
+::: {.callout-caution}
+Use `{.callout-caution}` to indicate materials under development; consider using `{.callout-warning}` for other cases.
+:::
+
+::: {.callout-note}
+Use `{.callout-note}` to communicate deeper ideas or understandings that are not critical to understanding the lesson at hand.  The instructor might skip over these while teaching.  If the reader does not read this, they may miss out, but nothing bad will happen.
+:::
+
+::: {.callout-tip}
+Use `{.callout-tip}` to communicate learning objectives, key points, and helpful tips and tricks.
+:::
+
+
+### Custom callouts
+
+There are currently four custom callouts for different types of tasks:
+
+* exercise `{.callout-exercise}`
+* hint `{.callout-hint}`
+* answer `{.callout-answer}`
+* example `{.callout-example}`
+
+
+These custom callouts work thanks to [Tavares, H., van Rongen, M., Cardona, A. (2024). Course Development Guidelines. https://cambiotraining.github.io/quarto-course-template/](https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html).  Unfortunately, the title is not responsive to the `title` argument in the callout or to the header-style titling that the built-in callouts can use.  The collapse option also seems to be unresponsive currently.
 
 ::: {.callout-exercise}
-Here's the exercise
+Use `{.callout-exercise}` for exercises.  The current default numbers exercises within a given page.  Click on the _hint_ and _answer_ callouts below to reveal the information in them.
 
 ::: {.callout-hint}
-here's the hint!
+Use `{.callout-hint}` for hints to the exercise - defaults to `collapse=true` for obvious reasons.  Note they can be nested within an exercise, or stand-alone.
 :::
 
 ::: {.callout-answer}
-here's the nested answer
+Use `{.callout-answer}` for answers to the exercise - defaults to `collapse=true` for obvious reasons.  Note they can be nested within an exercise, or stand-alone.
 :::
 
 :::
 
-::: {.callout-hint}
-here's the hint, not nested or collapsed
-:::
-
-::: {.callout-answer}
-here's the non-nested answer
-:::
-
-::: {.callout-example collapse=true}
-here's an example
-
-and more text
+::: {.callout-example}
+Use `{.callout-example}` for examples, e.g., example data or example.
 :::
 
 

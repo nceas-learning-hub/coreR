@@ -22,33 +22,11 @@
     ]
   },
   {
-    "objectID": "index.html#quickie-overview-of-main-functions",
-    "href": "index.html#quickie-overview-of-main-functions",
-    "title": "The {coreR} package",
-    "section": "1 Quickie overview of main functions",
-    "text": "1 Quickie overview of main functions",
-    "crumbs": [
-      "Welcome",
-      "The `{coreR}` package"
-    ]
-  },
-  {
-    "objectID": "index.html#why-corer",
-    "href": "index.html#why-corer",
-    "title": "The {coreR} package",
-    "section": "2 Why {coreR}?",
-    "text": "2 Why {coreR}?\n\n2.1 Where we’re at\nFor years NCEAS has been offering courses through the Learning Hub and the Arctic Data Center, among other efforts. The course offerings include lessons on collaboration with Git and GitHub, reproducibility with R and RStudio, and fundamental techniques of working with all kinds of data. As of October 2024, these courses have been built in the nceas-training repository of the NCEAS GitHub organization, with each course built on a separate branch. These courses are rendered by GitHub actions set up in the repro-research-course repository, where the courses are linked to an NCEAS URL, and archived in the repo.\nThis system has worked for years, and the lesson offerings have grown organically over time to 116 different .Rmds and .qmds. But setting up a new course is a little tricky - after establishing a desired curriculum, an instructor needs to manually identify relevant lessons from a long list of files with inconsistent file naming, and then needs to manually set up files to link to these lessons, all within a new branch to avoid affecting other lessons (and to work with the Github actions to publish the course). The lesson catalog contains duplicates, updated versions, deprecated lessons, etc. The instructor then frequently has to make edits to the lessons, on that separate branch. As of this writing, there are 43 separate branches, each likely holding improvements and valuable edits that cannot easily be resolved into the “best” version of each lesson. This branch method works, but is fragile, difficult to navigate, and uses branches in a different way than typically designed.\n\n\n2.2 Where we’re going\nBy setting up a new NCEAS Learning Hub organization, and designing the {coreR} and {coreRlessons} packages, we can accomplish a few things:\n\nMake it far easier to set up a typical Learning Hub training by automating many of the setup steps.\nCurate the course offerings and try to outline some standards for adding additional course offerings, for consistency.\nUse distinct repositories to host each course, rather than branches all held within a single repository.\nUpdate course lessons so that old course offerings can be brought into line with current course offerings (or lessons can be reverted to old versions).\nUse GitHub Pages to publish courses to the web.\nPut into practice many of the workflows we preach :)",
-    "crumbs": [
-      "Welcome",
-      "The `{coreR}` package"
-    ]
-  },
-  {
     "objectID": "index.html#what-does-corer-do",
     "href": "index.html#what-does-corer-do",
     "title": "The {coreR} package",
-    "section": "3 What does coreR do?",
-    "text": "3 What does coreR do?\nThe coreR package has a few key functions:\n\ninit_course() initializes a course by setting up a new repository and adding some metadata about the course based on user input.\nsetup_lessons() copies selected lessons from the {coreRlessons} package into the course repository and sets up the structure of the course as a Quarto website.\nupdate_lessons() will update lessons (or revert to older ones) based on user selection of a version of the {coreRlessons} package.",
+    "section": "1 What does {coreR} do?",
+    "text": "1 What does {coreR} do?\nThe {coreR} package has a few key functions:\n\ninit_course() initializes a course by setting up a new repository and adding some metadata about the course based on user input.\nsetup_lessons() copies selected lessons from the {coreRlessons} package into the course repository and sets up the structure of the course as a Quarto website.\nupdate_lessons() will update lessons (or revert to older ones) based on user selection of a version of the {coreRlessons} package.",
     "crumbs": [
       "Welcome",
       "The `{coreR}` package"
@@ -58,8 +36,19 @@
     "objectID": "index.html#what-does-corerlessons-do",
     "href": "index.html#what-does-corerlessons-do",
     "title": "The {coreR} package",
-    "section": "4 What does {coreRlessons} do?",
-    "text": "4 What does {coreRlessons} do?\nThe {coreRlessons} package doesn’t have any functions, but instead houses lessons as Quarto documents, along with templates and support files to construct a course. Why is this separate from {coreR}? First, it seemed like a good idea to allow the course lesson content to be version-controlled separately from the package containing the functions. Second, this allows for other instructors or organizations to create their own lesson content or structure that can play nicely with the {coreR} functionality - for example, if the curriculum for the Delta Stewardship Council diverged from the {coreR} curriculum, we could create a {deltaLessons} package to contain different content, and even a different style or format. Third, it allows an instructor to choose different versions of the content and perhaps update an old course, if the materials for the old course are significantly out of date.\nClearly we need a {coreR} hex sticker!",
+    "section": "2 What does {coreRlessons} do?",
+    "text": "2 What does {coreRlessons} do?\nThe {coreRlessons} package doesn’t have any functions, but instead houses lessons as Quarto documents, along with templates and support files to construct a course. Why is this separate from {coreR}?\n\nFirst, it seemed like a good idea to allow the course lesson content to be version-controlled separately from the package containing the functions.\n\nSecond, this allows for other instructors or organizations to create their own lesson content or structure that can play nicely with the {coreR} functionality - for example, if the curriculum for the Delta Stewardship Council diverged from the {coreR} curriculum, we could create a {deltaLessons} package to contain different content, and even a different style or format.\n\nThird, it allows an instructor to choose different versions of the content and perhaps update an old course, if the materials for the old course are significantly out of date, using GitHub release tags that refer to different versions of the content related to specific points in time.",
+    "crumbs": [
+      "Welcome",
+      "The `{coreR}` package"
+    ]
+  },
+  {
+    "objectID": "index.html#why-corer",
+    "href": "index.html#why-corer",
+    "title": "The {coreR} package",
+    "section": "3 Why {coreR}?",
+    "text": "3 Why {coreR}?\n\n3.1 Where we’re at\nFor years NCEAS has been offering courses through the Learning Hub and the Arctic Data Center, among other efforts. The course offerings include lessons on collaboration with Git and GitHub, reproducibility with R and RStudio, and fundamental techniques of working with all kinds of data. As of October 2024, these courses have been built in the nceas-training repository of the NCEAS GitHub organization, with each course built on a separate branch. These courses are rendered by GitHub actions set up in the repro-research-course repository, where the courses are linked to an NCEAS URL, and archived in the repo.\nThis system has worked for years, and the lesson offerings have grown organically over time to 116 different .Rmds and .qmds. But setting up a new course is a little tricky - after establishing a desired curriculum, an instructor needs to manually identify relevant lessons from a long list of files with inconsistent file naming, and then needs to manually set up files to link to these lessons, all within a new branch to avoid affecting other lessons (and to work with the Github actions to publish the course). The lesson catalog contains duplicates, updated versions, deprecated lessons, etc. The instructor then frequently has to make edits to the lessons, on that separate branch. As of this writing, there are 43 separate branches, each likely holding improvements and valuable edits that cannot easily be resolved into the “best” version of each lesson. This branch method works, but is fragile, difficult to navigate, and uses branches in a different way than typically designed.\n\n\n3.2 Where we’re going\nBy setting up a new NCEAS Learning Hub organization, and designing the {coreR} and {coreRlessons} packages, we can accomplish a few things:\n\nMake it far easier to set up a typical Learning Hub training by automating and streamlining many of the setup steps.\nCurate the course offerings and try to outline some standards for adding additional course offerings, for consistency.\nUse distinct repositories to host each course, rather than branches all held within a single repository.\nUpdate course lessons so that old course offerings can be brought into line with current course offerings (or lessons can be reverted to old versions).\nUse GitHub Pages to publish courses to the web.\nPut into practice many of the workflows we preach :)",
     "crumbs": [
       "Welcome",
       "The `{coreR}` package"
@@ -158,7 +147,18 @@
     "href": "6_content_guide.html",
     "title": "Content guidelines",
     "section": "",
-    "text": "See https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html for ideas\n\n0.1 testing callouts:\nNOTE it looks like including title=\"title of callout\" in the callout doesn’t work… and either does the header method that works for standard callouts… oh well, still pretty cool. Look at NCEAS Learning Hub style sheet for color ideas.\n\n\n\n\n\n\nExercise 1\n\n\n\n\n\n\nHere’s the exercise\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nhere’s the hint!\n\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nhere’s the nested answer\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nhere’s the hint, not nested or collapsed\n\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nhere’s the non-nested answer\n\n\n\n\n\n\n\n\n\n\nExample\n\n\n\n\n\n\nhere’s an example\nand more text",
+    "text": "See https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html for ideas",
+    "crumbs": [
+      "Contributing a lesson",
+      "Content guidelines"
+    ]
+  },
+  {
+    "objectID": "6_content_guide.html#callouts",
+    "href": "6_content_guide.html#callouts",
+    "title": "Content guidelines",
+    "section": "1 Callouts",
+    "text": "1 Callouts\nQuarto offers some built-in callout blocks to set content off against the normal body text. Note that we’ve customized the colors of our callouts to better match our course styling (see the lh_theme extension).\n\n1.1 Standard callouts\nThere are five built-in callouts signalling different levels of urgency:\n\ntip {.callout-tip}\nnote {.callout-note}\ncaution {.callout-caution}\nwarning {.callout-warning}\nimportant {.callout-important}\n\nSee the callout reference for how to create these.\nBased on the color and icons, here are recommendations on when and how to use these, in descending order of urgency:\n\n\n\n\n\n\nImportant\n\n\n\nThis is {.callout-important}: use this to highlight things that the reader must pay attention to, or essential ideas and concepts.\n\n\n\n\n\n\n\n\nWarning\n\n\n\nThis is {.callout-warning}: this should be used to highlight common “gotchas” such as common user errors or unexpected behavior.\n\n\n\n\n\n\n\n\nCaution\n\n\n\nThis is {.callout-caution}: this is for materials under development; generally use {.callout-warning} instead.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThis is {.callout-note}: this callout is good for communicating deeper ideas or understandings that are not critical to understanding the lesson at hand. The instructor might skip over these while teaching. If the reader does not read this, they may miss out, but nothing bad will happen.\n\n\n\n\n\n\n\n\nTip\n\n\n\nThis is {.callout-tip}: we’ll use these to communicate learning objectives, key points, and helpful tips and tricks.\n\n\n\n\n1.2 Custom callouts\nThese custom callouts work thanks to Tavares, H., van Rongen, M., Cardona, A. (2024). Course Development Guidelines. https://cambiotraining.github.io/quarto-course-template/. Unfortunately, the title is not responsive to the title argument in the callout or to the header-style titling that the built-in callouts can use.\n\n\n\n\n\n\nExercise 1\n\n\n\n\n\n\nUse {.callout-exercise} for exercises - defaults to numbering them.\n\n\n\n\n\n\nHint\n\n\n\n\n\n\nUse {.callout-hint} for hints to the exercise - defaults to collapse=true for obvious reasons. Note they can be nested within an exercise, or stand-alone.\n\n\n\n\n\n\n\n\n\n\nAnswer\n\n\n\n\n\n\nUse {.callout-answer} for answers to the exercise - defaults to collapse=true for obvious reasons. Note they can be nested within an exercise, or stand-alone.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample\n\n\n\n\n\n\nUse {.callout-example} for examples, e.g., example data or example.",
     "crumbs": [
       "Contributing a lesson",
       "Content guidelines"

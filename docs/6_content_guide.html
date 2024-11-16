@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<link rel="stylesheet" href="lh-style.css">
+<link rel="stylesheet" href="_extensions/nceas-learning-hub/lh_theme/lh-style.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -248,7 +248,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#testing-callouts" id="toc-testing-callouts" class="nav-link active" data-scroll-target="#testing-callouts"><span class="header-section-number">0.1</span> testing callouts:</a></li>
+  <li><a href="#callouts" id="toc-callouts" class="nav-link active" data-scroll-target="#callouts"><span class="header-section-number">1</span> Callouts</a>
+  <ul class="collapse">
+  <li><a href="#standard-callouts" id="toc-standard-callouts" class="nav-link" data-scroll-target="#standard-callouts"><span class="header-section-number">1.1</span> Standard callouts</a></li>
+  <li><a href="#custom-callouts" id="toc-custom-callouts" class="nav-link" data-scroll-target="#custom-callouts"><span class="header-section-number">1.2</span> Custom callouts</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -260,11 +264,92 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>See <a href="https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html" class="uri">https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html</a> for ideas</p>
-<section id="testing-callouts" class="level3" data-number="0.1">
-<h3 data-number="0.1" class="anchored" data-anchor-id="testing-callouts"><span class="header-section-number">0.1</span> testing callouts:</h3>
-<p>NOTE it looks like including <code>title="title of callout"</code> in the callout doesn’t work… and either does the header method that works for standard callouts… oh well, still pretty cool. Look at NCEAS Learning Hub style sheet for color ideas.</p>
+<section id="callouts" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="callouts"><span class="header-section-number">1</span> Callouts</h2>
+<p>Quarto offers some built-in <a href="https://quarto.org/docs/authoring/callouts.html">callout blocks</a> to set content off against the normal body text. Note that we’ve customized the colors of our callouts to better match our course styling (see the <code>lh_theme</code> extension).</p>
+<section id="standard-callouts" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="standard-callouts"><span class="header-section-number">1.1</span> Standard callouts</h3>
+<p>There are five built-in callouts signalling different levels of urgency:</p>
+<ul>
+<li>tip <code>{.callout-tip}</code></li>
+<li>note <code>{.callout-note}</code></li>
+<li>caution <code>{.callout-caution}</code></li>
+<li>warning <code>{.callout-warning}</code></li>
+<li>important <code>{.callout-important}</code></li>
+</ul>
+<p>See the <a href="https://quarto.org/docs/authoring/callouts.html">callout reference</a> for how to create these.</p>
+<p>Based on the color and icons, here are recommendations on when and how to use these, in descending order of urgency:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is <code>{.callout-important}</code>: use this to highlight things that the reader <em>must</em> pay attention to, or essential ideas and concepts.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is <code>{.callout-warning}</code>: this should be used to highlight common “gotchas” such as common user errors or unexpected behavior.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is <code>{.callout-caution}</code>: this is for materials under development; generally use <code>{.callout-warning}</code> instead.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is <code>{.callout-note}</code>: this callout is good for communicating deeper ideas or understandings that are not critical to understanding the lesson at hand. The instructor might skip over these while teaching. If the reader does not read this, they may miss out, but nothing bad will happen.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This is <code>{.callout-tip}</code>: we’ll use these to communicate learning objectives, key points, and helpful tips and tricks.</p>
+</div>
+</div>
+</section>
+<section id="custom-callouts" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="custom-callouts"><span class="header-section-number">1.2</span> Custom callouts</h3>
+<p>These custom callouts work thanks to <a href="https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html">Tavares, H., van Rongen, M., Cardona, A. (2024). Course Development Guidelines. https://cambiotraining.github.io/quarto-course-template/</a>. Unfortunately, the title is not responsive to the <code>title</code> argument in the callout or to the header-style titling that the built-in callouts can use.</p>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -273,12 +358,12 @@ Exercise 1
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
-<p>Here’s the exercise</p>
+<p>Use <code>{.callout-exercise}</code> for exercises - defaults to numbering them.</p>
 <div class="callout callout-style-default callout-hint no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -287,16 +372,16 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="callout-hint">
-<p>here’s the hint!</p>
+<div class="callout-hint" data-collapse="false">
+<p>Use <code>{.callout-hint}</code> for hints to the exercise - defaults to <code>collapse=true</code> for obvious reasons. Note they can be nested within an exercise, or stand-alone.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-answer no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -305,56 +390,20 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="callout-answer">
-<p>here’s the nested answer</p>
+<div class="callout-answer" data-collapse="false">
+<p>Use <code>{.callout-answer}</code> for answers to the exercise - defaults to <code>collapse=true</code> for obvious reasons. Note they can be nested within an exercise, or stand-alone.</p>
 </div>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-hint no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="callout-hint">
-<p>here’s the hint, not nested or collapsed</p>
-</div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-answer no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="callout-answer">
-<p>here’s the non-nested answer</p>
 </div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-example no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -363,17 +412,17 @@ Example
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<div class="callout-example" data-collapse="true">
-<p>here’s an example</p>
-<p>and more text</p>
+<div class="callout-example">
+<p>Use <code>{.callout-example}</code> for examples, e.g., example data or example.</p>
 </div>
 </div>
 </div>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

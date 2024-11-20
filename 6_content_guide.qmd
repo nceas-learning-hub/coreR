@@ -4,6 +4,31 @@ title: Content guidelines
 
 See <https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html> for ideas
 
+## Headers and such
+
+## Code formatting
+
+- code that needs to be run, identical to what we want to show the reader: 
+- code that needs to be run, but is different than we want to show the reader, e.g., reading in a file from a different source than presented in the lesson: `#| include: false`
+
+- code that doesn't need to be run: enclose in code block fence with language name next to it for syntax highlighting (e.g., ```` ```r```` instead of in curly braces ```` ```{r}```` used for a functioning code block!).
+- optional, use footnotes by including `# <1>` at the end of a line, then a `1. footnote text here` - this works in functional code or non-functional code!
+
+````
+```r
+x <- 3 * 4 # <1>
+```
+1. This is an example of a footnote!
+````
+
+will render like:
+
+```r
+x <- 3 * 4 # <1>
+```
+1. This is an example of a footnote!
+
+
 ## Callouts
 
 Quarto offers some built-in [callout blocks](https://quarto.org/docs/authoring/callouts.html) to set content off against the normal body text.  Note that we've customized the colors of our callouts to better match our course styling (see the `lh_theme` extension).  

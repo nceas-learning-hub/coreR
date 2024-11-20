@@ -22,7 +22,7 @@ The lesson `.qmd` files are copied out of the lessons package (`{coreRlessons}` 
 For consistency, lesson files must be Quarto documents with a `.qmd` extension and a yaml header containing only the title.  Older lessons in `.Rmd` format should be updated.
 :::
 
-### Lesson supporting files
+## Lesson supporting files
 
 Some lessons link to external images, data, or embedded slides.  These files are stored in directories named `images`, `data`, and `slides` respectively.  For a given lesson, correspondingly named subdirectories will appear in each of these image/data/slides directories, like this (for a lesson `s01_r_programming_introduction.qmd`):
 
@@ -63,6 +63,17 @@ The file structure inside the `coreRlessons` package is similar except:
 
 * the lesson `.qmd`s and supporting files/folders all live in the `inst` folder inside the package repository
 * the supporting files folders are all prefaced with `lesson_` (e.g., `lesson_data`) - this is because R packages don't like a folder called `data` in the `inst` folder, since it may interact with the `data` folder in the root.
+    * to render properly, the links inside the lesson .qmd should point to `data`, `images`, or `slides` without the `lesson_` prefix
+* all content inside the supporting folders is copied over to the new course without modification.
+:::
+
+:::{.callout-note}
+### File sizes and naming in supporting content
+
+As noted above, all content inside the supporting folders is copied over to the new course without modification.  Please be considerate when designing and organizing the supporting content!  This includes paying attention to:
+
+* File naming - short but descriptive.
+* File size - particularly for images, ensure the file is as small as reasonable.  This holds true especially for screen captures - these are typically captured at full screen resolution, but are quite readable shrunk down to a coarser resolution which saves a huge amount of space.  Use a photo app to shrink them please!
 :::
 
 ## Extensions and formatting

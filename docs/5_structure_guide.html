@@ -249,11 +249,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#quarto.yml" id="toc-quarto.yml" class="nav-link active" data-scroll-target="#quarto.yml"><span class="header-section-number">1</span> <code>_quarto.yml</code></a></li>
-  <li><a href="#lessons" id="toc-lessons" class="nav-link" data-scroll-target="#lessons"><span class="header-section-number">2</span> Lessons</a>
-  <ul class="collapse">
-  <li><a href="#lesson-supporting-files" id="toc-lesson-supporting-files" class="nav-link" data-scroll-target="#lesson-supporting-files"><span class="header-section-number">2.1</span> Lesson supporting files</a></li>
-  </ul></li>
-  <li><a href="#extensions-and-formatting" id="toc-extensions-and-formatting" class="nav-link" data-scroll-target="#extensions-and-formatting"><span class="header-section-number">3</span> Extensions and formatting</a></li>
+  <li><a href="#lessons" id="toc-lessons" class="nav-link" data-scroll-target="#lessons"><span class="header-section-number">2</span> Lessons</a></li>
+  <li><a href="#lesson-supporting-files" id="toc-lesson-supporting-files" class="nav-link" data-scroll-target="#lesson-supporting-files"><span class="header-section-number">3</span> Lesson supporting files</a></li>
+  <li><a href="#extensions-and-formatting" id="toc-extensions-and-formatting" class="nav-link" data-scroll-target="#extensions-and-formatting"><span class="header-section-number">4</span> Extensions and formatting</a></li>
   </ul>
 </nav>
     </div>
@@ -287,8 +285,9 @@ ul.task-list li input[type="checkbox"] {
 <p>For consistency, lesson files must be Quarto documents with a <code>.qmd</code> extension and a yaml header containing only the title. Older lessons in <code>.Rmd</code> format should be updated.</p>
 </div>
 </div>
-<section id="lesson-supporting-files" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="lesson-supporting-files"><span class="header-section-number">2.1</span> Lesson supporting files</h3>
+</section>
+<section id="lesson-supporting-files" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="lesson-supporting-files"><span class="header-section-number">3</span> Lesson supporting files</h2>
 <p>Some lessons link to external images, data, or embedded slides. These files are stored in directories named <code>images</code>, <code>data</code>, and <code>slides</code> respectively. For a given lesson, correspondingly named subdirectories will appear in each of these image/data/slides directories, like this (for a lesson <code>s01_r_programming_introduction.qmd</code>):</p>
 <pre><code>&lt;project root&gt;
   |-- s01_r_programming_introduction.qmd  ### the lesson document
@@ -330,14 +329,34 @@ File structure in created course vs.&nbsp;in <code>coreRlessons</code> package
 <p>The file structure inside the <code>coreRlessons</code> package is similar except:</p>
 <ul>
 <li>the lesson <code>.qmd</code>s and supporting files/folders all live in the <code>inst</code> folder inside the package repository</li>
-<li>the supporting files folders are all prefaced with <code>lesson_</code> (e.g., <code>lesson_data</code>) - this is because R packages don’t like a folder called <code>data</code> in the <code>inst</code> folder, since it may interact with the <code>data</code> folder in the root.</li>
+<li>the supporting files folders are all prefaced with <code>lesson_</code> (e.g., <code>lesson_data</code>) - this is because R packages don’t like a folder called <code>data</code> in the <code>inst</code> folder, since it may interact with the <code>data</code> folder in the root.
+<ul>
+<li>to render properly, the links inside the lesson .qmd should point to <code>data</code>, <code>images</code>, or <code>slides</code> without the <code>lesson_</code> prefix</li>
+</ul></li>
+<li>all content inside the supporting folders is copied over to the new course without modification.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+File sizes and naming in supporting content
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As noted above, all content inside the supporting folders is copied over to the new course without modification. Please be considerate when designing and organizing the supporting content! This includes paying attention to:</p>
+<ul>
+<li>File naming - short but descriptive.</li>
+<li>File size - particularly for images, ensure the file is as small as reasonable. This holds true especially for screen captures - these are typically captured at full screen resolution, but are quite readable shrunk down to a coarser resolution which saves a huge amount of space. Use a photo app to shrink them please!</li>
 </ul>
 </div>
 </div>
 </section>
-</section>
-<section id="extensions-and-formatting" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="extensions-and-formatting"><span class="header-section-number">3</span> Extensions and formatting</h2>
+<section id="extensions-and-formatting" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="extensions-and-formatting"><span class="header-section-number">4</span> Extensions and formatting</h2>
 <ul>
 <li>scss etc in the <code>_extensions</code> folder? or in root?</li>
 <li>if extension, how to update styling (separate from content)</li>

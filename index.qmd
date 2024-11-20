@@ -54,3 +54,8 @@ By setting up a new NCEAS Learning Hub organization, and designing the `{coreR}`
 5. Use GitHub Pages to publish courses to the web.
 6. Put into practice many of the workflows we preach :)
 
+## Acknowledgments
+
+Julia Stewart Lowndes, Allison Horst, Jenny Bryan
+
+Tavares, H., van Rongen, M., Cardona, A. (2024). Course Development Guidelines. https://cambiotraining.github.io/quarto-course-template/

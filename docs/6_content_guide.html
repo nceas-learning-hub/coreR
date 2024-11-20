@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -248,10 +282,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#callouts" id="toc-callouts" class="nav-link active" data-scroll-target="#callouts"><span class="header-section-number">1</span> Callouts</a>
+  <li><a href="#headers-and-such" id="toc-headers-and-such" class="nav-link active" data-scroll-target="#headers-and-such"><span class="header-section-number">1</span> Headers and such</a></li>
+  <li><a href="#code-formatting" id="toc-code-formatting" class="nav-link" data-scroll-target="#code-formatting"><span class="header-section-number">2</span> Code formatting</a></li>
+  <li><a href="#callouts" id="toc-callouts" class="nav-link" data-scroll-target="#callouts"><span class="header-section-number">3</span> Callouts</a>
   <ul class="collapse">
-  <li><a href="#standard-callouts" id="toc-standard-callouts" class="nav-link" data-scroll-target="#standard-callouts"><span class="header-section-number">1.1</span> Standard callouts</a></li>
-  <li><a href="#custom-callouts" id="toc-custom-callouts" class="nav-link" data-scroll-target="#custom-callouts"><span class="header-section-number">1.2</span> Custom callouts</a></li>
+  <li><a href="#standard-callouts" id="toc-standard-callouts" class="nav-link" data-scroll-target="#standard-callouts"><span class="header-section-number">3.1</span> Standard callouts</a></li>
+  <li><a href="#custom-callouts" id="toc-custom-callouts" class="nav-link" data-scroll-target="#custom-callouts"><span class="header-section-number">3.2</span> Custom callouts</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -264,11 +300,35 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>See <a href="https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html" class="uri">https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html</a> for ideas</p>
-<section id="callouts" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="callouts"><span class="header-section-number">1</span> Callouts</h2>
+<section id="headers-and-such" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="headers-and-such"><span class="header-section-number">1</span> Headers and such</h2>
+</section>
+<section id="code-formatting" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="code-formatting"><span class="header-section-number">2</span> Code formatting</h2>
+<ul>
+<li><p>code that needs to be run, identical to what we want to show the reader:</p></li>
+<li><p>code that needs to be run, but is different than we want to show the reader, e.g., reading in a file from a different source than presented in the lesson: <code>#| include: false</code></p></li>
+<li><p>code that doesn’t need to be run: enclose in code block fence with language name next to it for syntax highlighting (e.g., <code>```r</code> instead of in curly braces <code>```{r}</code> used for a functioning code block!).</p></li>
+<li><p>optional, use footnotes by including <code># &lt;1&gt;</code> at the end of a line, then a <code>1. footnote text here</code> - this works in functional code or non-functional code!</p></li>
+</ul>
+<pre id="annotated-cell-1" class="code-annotation-code"><code>```r
+x &lt;- 3 * 4
+```
+1. This is an example of a footnote!</code></pre>
+<p>will render like:</p>
+<div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">*</span> <span class="dv">4</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="1">This is an example of a footnote!</span>
+</dd>
+</dl>
+</section>
+<section id="callouts" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="callouts"><span class="header-section-number">3</span> Callouts</h2>
 <p>Quarto offers some built-in <a href="https://quarto.org/docs/authoring/callouts.html">callout blocks</a> to set content off against the normal body text. Note that we’ve customized the colors of our callouts to better match our course styling (see the <code>lh_theme</code> extension).</p>
-<section id="standard-callouts" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="standard-callouts"><span class="header-section-number">1.1</span> Standard callouts</h3>
+<section id="standard-callouts" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="standard-callouts"><span class="header-section-number">3.1</span> Standard callouts</h3>
 <p>There are five built-in callouts signalling different levels of urgency:</p>
 <ul>
 <li>tip <code>{.callout-tip}</code></li>
@@ -289,7 +349,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is <code>{.callout-important}</code>: use this to highlight things that the reader <em>must</em> pay attention to, or essential ideas and concepts.</p>
+<p>Use <code>{.callout-important}</code> to highlight things that the reader <em>must</em> pay attention to, or essential ideas and concepts.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -302,7 +362,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is <code>{.callout-warning}</code>: this should be used to highlight common “gotchas” such as common user errors or unexpected behavior.</p>
+<p>Use <code>{.callout-warning}</code> to highlight common “gotchas” such as common user errors or unexpected behavior.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
@@ -315,7 +375,7 @@ Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is <code>{.callout-caution}</code>: this is for materials under development; generally use <code>{.callout-warning}</code> instead.</p>
+<p>Use <code>{.callout-caution}</code> to indicate materials under development; consider using <code>{.callout-warning}</code> for other cases.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -328,7 +388,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is <code>{.callout-note}</code>: this callout is good for communicating deeper ideas or understandings that are not critical to understanding the lesson at hand. The instructor might skip over these while teaching. If the reader does not read this, they may miss out, but nothing bad will happen.</p>
+<p>Use <code>{.callout-note}</code> to communicate deeper ideas or understandings that are not critical to understanding the lesson at hand. The instructor might skip over these while teaching. If the reader does not read this, they may miss out, but nothing bad will happen.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -341,13 +401,20 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is <code>{.callout-tip}</code>: we’ll use these to communicate learning objectives, key points, and helpful tips and tricks.</p>
+<p>Use <code>{.callout-tip}</code> to communicate learning objectives, key points, and helpful tips and tricks.</p>
 </div>
 </div>
 </section>
-<section id="custom-callouts" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="custom-callouts"><span class="header-section-number">1.2</span> Custom callouts</h3>
-<p>These custom callouts work thanks to <a href="https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html">Tavares, H., van Rongen, M., Cardona, A. (2024). Course Development Guidelines. https://cambiotraining.github.io/quarto-course-template/</a>. Unfortunately, the title is not responsive to the <code>title</code> argument in the callout or to the header-style titling that the built-in callouts can use.</p>
+<section id="custom-callouts" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="custom-callouts"><span class="header-section-number">3.2</span> Custom callouts</h3>
+<p>There are currently four custom callouts for different types of tasks:</p>
+<ul>
+<li>exercise <code>{.callout-exercise}</code></li>
+<li>hint <code>{.callout-hint}</code></li>
+<li>answer <code>{.callout-answer}</code></li>
+<li>example <code>{.callout-example}</code></li>
+</ul>
+<p>These custom callouts work thanks to <a href="https://cambiotraining.github.io/quarto-course-template/materials/02-content_guidelines.html">Tavares, H., van Rongen, M., Cardona, A. (2024). Course Development Guidelines. https://cambiotraining.github.io/quarto-course-template/</a>. Unfortunately, the title is not responsive to the <code>title</code> argument in the callout or to the header-style titling that the built-in callouts can use. The collapse option also seems to be unresponsive currently.</p>
 <div class="callout callout-style-default callout-exercise no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -361,7 +428,7 @@ Exercise 1
 <div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="callout-exercise">
-<p>Use <code>{.callout-exercise}</code> for exercises - defaults to numbering them.</p>
+<p>Use <code>{.callout-exercise}</code> for exercises. The current default numbers exercises within a given page. Click on the <em>hint</em> and <em>answer</em> callouts below to reveal the information in them.</p>
 <div class="callout callout-style-default callout-hint no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -374,7 +441,7 @@ Hint
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="callout-hint" data-collapse="false">
+<div class="callout-hint">
 <p>Use <code>{.callout-hint}</code> for hints to the exercise - defaults to <code>collapse=true</code> for obvious reasons. Note they can be nested within an exercise, or stand-alone.</p>
 </div>
 </div>
@@ -392,7 +459,7 @@ Answer
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="callout-answer" data-collapse="false">
+<div class="callout-answer">
 <p>Use <code>{.callout-answer}</code> for answers to the exercise - defaults to <code>collapse=true</code> for obvious reasons. Note they can be nested within an exercise, or stand-alone.</p>
 </div>
 </div>

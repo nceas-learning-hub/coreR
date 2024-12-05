@@ -10,8 +10,8 @@ editor: source
 format:
   html:
     theme: ### can only point to scss, not css
-       - _extensions/nceas-learning-hub/lh_theme/lh_light.scss
-       # dark: _extensions/nceas-learning-hub/lh_theme/lh_dark.scss
+       light: _extensions/nceas-learning-hub/lh_theme/lh_light.scss
+       dark: _extensions/nceas-learning-hub/lh_theme/lh_dark.scss
     css: _extensions/nceas-learning-hub/lh_theme/lh-style.css   ### doesn't render NCEAS logo if put in scss file?
     toc: true
     number-sections: true

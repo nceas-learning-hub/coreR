@@ -15,13 +15,13 @@ format:
     css: _extensions/nceas-learning-hub/lh_theme/lh-style.css   ### doesn't render NCEAS logo if put in scss file?
     toc: true
     number-sections: true
-    title-block-banner: "blue" ### need something here to "turn on" the title-block-banner
+    title-block-banner: "#00000044" ### need something here to "turn on" the title-block-banner
 
 website:
   title: "coreR - NCEAS Learning Hub"
   reader-mode: false
   repo-url: https://github.com/nceas-learning-hub/coreR
-  favicon: images/logo-lh.png
+  favicon: _extensions/nceas-learning-hub/lh_theme/logo-lh-hex.png
   bread-crumbs: false
   navbar:
     right:

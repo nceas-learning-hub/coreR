@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="site_libs/quarto-contrib/quarto-project/nceas-learning-hub/lh_theme/logo-lh-hex.png" rel="icon" type="image/png">
+<link href="./_extensions/nceas-learning-hub/lh_theme/logo_lh_hex.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -106,12 +106,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <style>
 
       .quarto-title-block .quarto-title-banner {
-        background: #00000044;
+        background: #44444444;
       }
 </style>
 
 
-<link rel="stylesheet" href="site_libs/quarto-contrib/quarto-project/nceas-learning-hub/lh_theme/lh-style.css">
+<link rel="stylesheet" href="_extensions/nceas-learning-hub/lh_theme/lh_style.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -623,6 +623,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
